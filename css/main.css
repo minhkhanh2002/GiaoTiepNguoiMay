@@ -304,7 +304,7 @@ body {
 }
 
 .sticky .header_page-main {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     background: #D3756B;
 }
@@ -540,3 +540,22 @@ body {
 }
 
 
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.language-switcher img {
+    width: 32px; /* Tăng chiều rộng */
+    height: 24px; /* Tăng chiều cao */
+    cursor: pointer;
+    border-radius: 3px; /* Tăng bo góc một chút */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.2);
+}

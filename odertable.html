@@ -6,17 +6,23 @@
     <title>Table Reservation</title>
     <style>
         body {
+            background-image:url('img/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            
+            
         }
         .container {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background: #fff;
+            background: #FFFDF0;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -125,7 +131,7 @@
             color: #fff;
         }
         #popup .action {
-            background: #6c5ce7;
+            background: #55c965;
             color: #fff;
         }
         #overlay {
@@ -142,17 +148,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Coffee Table Reservation</h1>
+        <h1>Đặt bàn</h1>
         <div class="floor-buttons">
-            <button onclick="switchFloor(1)">Floor 1</button>
-            <button onclick="switchFloor(2)">Floor 2</button>
+            <button onclick="switchFloor(1)">Tầng 1</button>
+            <button onclick="switchFloor(2)">Tầng 2</button>
         </div>
-        <div class="screen">Floor 1 Layout</div>
+        <div class="screen">Sơ đồ tầng 1</div>
         <div class="tables"></div>
         <div class="legend">
-            <div class="available"><span></span> Available</div>
-            <div class="selected"><span></span> Selected</div>
-            <div class="occupied"><span></span> Occupied</div>
+            <div class="available"><span></span> Bàn trống</div>
+            <div class="selected"><span></span> Bàn đang chọn</div>
+            <div class="occupied"><span></span> Bàn đã có người</div>
         </div>
     </div>
 
@@ -160,7 +166,7 @@
     <div id="popup">
         <p id="popup-message"></p>
         <button class="action" id="popup-action"></button>
-        <button class="close" onclick="closePopup()">Close</button>
+        <button class="close" onclick="closePopup()">Đóng</button>
     </div>
 
     <script>
@@ -185,9 +191,9 @@
                 table.classList.add('table');
                 if (status === 1) {
                     table.classList.add('occupied');
-                    table.addEventListener('click', () => showPopup('This table is occupied. Would you like to order food?', 'Order Food'));
+                    table.addEventListener('click', () => showPopup('Bàn này đã có người, xin vui lòng chọn bàn khác. Hoặc bạn muốn gọi đồ cho bàn này?', 'Gọi đồ'));
                 } else {
-                    table.addEventListener('click', () => showPopup('This table is available. Would you like to reserve it?', 'Reserve Table'));
+                    table.addEventListener('click', () => showPopup('Bàn này hiện đang trống, bạn có muốn chọn không?', 'Đặt bàn'));
                 }
                 table.textContent = index + 1;
                 tablesContainer.appendChild(table);
@@ -196,7 +202,7 @@
 
         function switchFloor(floor) {
             currentFloor = floor;
-            screen.textContent = `Floor ${floor} Layout`;
+            screen.textContent = `Sơ đồ tầng ${floor}`;
             renderTables();
         }
 

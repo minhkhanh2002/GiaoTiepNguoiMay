@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <style>
+        .product-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .product-image {
+            max-width: 300px;
+        }
+
+        .product-details {
+            max-width: 400px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-details h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #d35400;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .options h4 {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .option-btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .option-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .option-btn.active {
+            background: #d35400;
+            color: #fff;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #d35400;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .order-btn:hover {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <!-- Hình ảnh sản phẩm -->
+        <img src="product-image.jpg" alt="Sản phẩm" class="product-image">
+
+        <!-- Chi tiết sản phẩm -->
+        <div class="product-details">
+            <h2>Cà Phê Sữa Đá</h2>
+            <p class="price" id="base-price">29.000 đ</p>
+
+            <div class="options">
+                <h4>Chọn size (bắt buộc)</h4>
+                <div class="size-options">
+                    <button class="option-btn" data-price="0" onclick="updatePrice('size', 0)">Nhỏ + 0 đ</button>
+                    <button class="option-btn" data-price="10000" onclick="updatePrice('size', 10000)">Vừa + 10.000 đ</button>
+                    <button class="option-btn" data-price="16000" onclick="updatePrice('size', 16000)">Lớn + 16.000 đ</button>
+                </div>
+
+                <h4>Topping</h4>
+                <div class="topping-options">
+                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Sốt Caramel + 10.000 đ</button>
+                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Shot Espresso + 10.000 đ</button>
+                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Trân châu trắng + 10.000 đ</button>
+                </div>
+            </div>
+
+            <button class="order-btn">Đặt giao tận nơi</button>
+        </div>
+    </div>
+
+    <script>
+        let basePrice = 29000; // Giá cơ bản
+        let selectedSizePrice = 0;
+        let selectedToppings = new Set();
+
+        function updatePrice(type, price) {
+            if (type === 'size') {
+                selectedSizePrice = price;
+
+                // Đặt trạng thái active cho size
+                document.querySelectorAll('.size-options .option-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            } else if (type === 'topping') {
+                const toppingPrice = price;
+                const toppingElement = event.target;
+
+                // Thêm/xóa topping và đổi trạng thái active
+                if (selectedToppings.has(toppingElement)) {
+                    selectedToppings.delete(toppingElement);
+                    toppingElement.classList.remove('active');
+                } else {
+                    selectedToppings.add(toppingElement);
+                    toppingElement.classList.add('active');
+                }
+            }
+
+            // Tính tổng giá
+            const toppingsTotal = Array.from(selectedToppings).reduce((sum, topping) => {
+                return sum + parseInt(topping.getAttribute('data-price'));
+            }, 0);
+
+            const totalPrice = basePrice + selectedSizePrice + toppingsTotal;
+            document.getElementById('base-price').textContent = totalPrice.toLocaleString('vi-VN') + ' đ';
+        }
+    </script>
+</body>
+</html>
