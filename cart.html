@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/cart.css">
-    <title>Shop Bán Ngọc Quý</title>
+    <title>Shop Bán Coffe</title>
 
 </head>
 
 <body>
+<div id="popup-message" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); padding: 15px; background-color: #4CAF50; color: white; border-radius: 5px; z-index: 9999; text-align: center;">
+    Thông báo
+</div>
+
 <div class="main_page">
 
     <!-- Header page -->
@@ -30,14 +34,14 @@
                 <ul class="header_page-category-main-menu">
                     <li><a href="index.html">Trang chủ</a></li>
                     <li><a href="product.html"> Sản phẩm
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
                         <ul class="header_page-category-sub-menu">
-                            <li><a href="">Nhẫn</a></li>
-                            <li><a href="">Hoa tai</a></li>
-                            <li><a href="">Dây chuyền</a></li>
-                            <li><a href="">Vòng tay</a></li>
-                            <li><a href="">Mặt dây chuyền</a></li>
+                            <li><a href="">Coffe</a></li>
+                            <li><a href="">Trà Trái Cây</a></li>
+                            <li><a href="">Trà Sữa</a></li>
+                            <li><a href="">Đá Xay</a></li>
+                            <li><a href="">Bánh Ngọt</a></li>
                         </ul>
                     </li>
                     <li><a href="">Trang<i class="fa-solid fa-chevron-down"></i></a>
@@ -57,7 +61,7 @@
                 <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>Tìm
                     kiếm
                 </button>
-                <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i>Giỏ hàng(100)</a></button>
+                <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i>Giỏ hàng(4)</a></button>
                 <button><a href="login.html"><i class="fa-solid fa-user"></i>Tài khoản</a></button>
             </div>
             <!--  -->
@@ -87,11 +91,11 @@
                     </a> -->
                             <div class="main-menu-content">
                                 <ul>
-                                    <li><a href="" style="font-weight: normal">Nhẫn</a></li>
-                                    <li><a href="" style="font-weight: normal">Hoa tai</a></li>
-                                    <li><a href="" style="font-weight: normal">Dây chuyên</a></li>
-                                    <li><a href="" style="font-weight: normal">Vòng tay</a></li>
-                                    <li><a href="" style="font-weight: normal">Mặt dây chuyền</a></li>
+                                    <li><a href="" style="font-weight: normal">Coffe</a></li>
+                                    <li><a href="" style="font-weight: normal">Trà Trái Cây</a></li>
+                                    <li><a href="" style="font-weight: normal">Trà Sữa</a></li>
+                                    <li><a href="" style="font-weight: normal">Đá Xay</a></li>
+                                    <li><a href="" style="font-weight: normal">Bánh Ngọt</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -148,7 +152,7 @@
 
     <!--banner-->
     <div class="banner">
-        <h1>Giỏ hàng</h1>
+        <h1></h1>
     </div>
 
     <!-- body page -->
@@ -193,12 +197,12 @@
                     </th>
                     <th class="product-name">
                         <a href="#">
-                            Vòng thạch anh tóc cam VIP 8mm
+                            Cà Phê Sữa Đá size nhỏ , Topping Sốt Caramel
                         </a>
                     </th>
                     <th class="product-price">
                 <span>
-                  2.484.000 đ
+                  39.000 đ
                 </span>
                     </th>
                     <th class="product-quantity">
@@ -209,7 +213,7 @@
                         </div>
                     </th>
                     <th class="product-total">
-                        <span>2.484.000 đ</span>
+                        <span>39.000 đ</span>
                     </th>
                     <th class="product-remove">
                         <button><i class="fa-solid fa-xmark"></i>
@@ -225,12 +229,12 @@
                     </th>
                     <th class="product-name">
                         <a href="#">
-                            Vòng thạch anh tóc cam VIP 8mm
+                            Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel
                         </a>
                     </th>
                     <th class="product-price">
                 <span>
-                  2.484.000 đ
+                  55.000 đ
                 </span>
                     </th>
                     <th class="product-quantity">
@@ -241,40 +245,7 @@
                         </div>
                     </th>
                     <th class="product-total">
-                        <span>2.484.000 đ</span>
-                    </th>
-                    <th class="product-remove">
-                        <button><i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </th>
-                </tr>
-
-                <!-- product -->
-                <tr>
-                    <th class="product-thumbnail">
-                        <a href="#">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Vòng thạch anh tóc cam VIP 8mm
-                        </a>
-                    </th>
-                    <th class="product-price">
-                <span>
-                  2.484.000 đ
-                </span>
-                    </th>
-                    <th class="product-quantity">
-                        <div class="cart-plus-minus">
-                            <button class="dec qtybutton">-</button>
-                            <input type="text" value="1">
-                            <button class="inc qtybutton">+</button>
-                        </div>
-                    </th>
-                    <th class="product-total">
-                        <span>2.484.000 đ</span>
+                        <span>55.000 đ</span>
                     </th>
                     <th class="product-remove">
                         <button><i class="fa-solid fa-xmark"></i>
@@ -291,12 +262,12 @@
                     </th>
                     <th class="product-name">
                         <a href="#">
-                            Vòng thạch anh tóc cam VIP 8mm
+                            Cà Phê Sữa Đá size vừa  , Topping Trân Châu Trắng
                         </a>
                     </th>
                     <th class="product-price">
                 <span>
-                  2.484.000 đ
+                  49.000 đ
                 </span>
                     </th>
                     <th class="product-quantity">
@@ -307,7 +278,40 @@
                         </div>
                     </th>
                     <th class="product-total">
-                        <span>2.484.000 đ</span>
+                        <span>49.000 đ</span>
+                    </th>
+                    <th class="product-remove">
+                        <button><i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </th>
+                </tr>
+
+                <!-- product -->
+                <tr>
+                    <th class="product-thumbnail">
+                        <a href="#">
+                            <img src="img/main_products/m1.jpg" alt="">
+                        </a>
+                    </th>
+                    <th class="product-name">
+                        <a href="#">
+                            Cà Phê Sữa Đá size nhỏ  , Topping Sốt Caramel
+                        </a>
+                    </th>
+                    <th class="product-price">
+                <span>
+                  39.000 đ
+                </span>
+                    </th>
+                    <th class="product-quantity">
+                        <div class="cart-plus-minus">
+                            <button class="dec qtybutton">-</button>
+                            <input type="text" value="1">
+                            <button class="inc qtybutton">+</button>
+                        </div>
+                    </th>
+                    <th class="product-total">
+                        <span>39.000 đ</span>
                     </th>
                     <th class="product-remove">
                         <button><i class="fa-solid fa-xmark"></i>
@@ -327,8 +331,8 @@
                             <img src="img/main_products/m1.jpg" alt="">
                         </div>
                         <div class="card_infor">
-                            <a href="#" class="title">Vòng thạch anh tóc cam VIP 8mm</a><br>
-                            <span class="price">2.484.000 đ</span>
+                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
+                            <span class="price">55.000 đ</span>
                             <div class="product-quantity">
                                 <button>-</button>
                                 <input type="text" value="1">
@@ -344,8 +348,8 @@
                             <img src="img/main_products/m1.jpg" alt="">
                         </div>
                         <div class="card_infor">
-                            <a href="#" class="title">Vòng thạch anh tóc cam VIP 8mm</a><br>
-                            <span class="price">2.484.000 đ</span>
+                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
+                            <span class="price">55.000 đ</span>
                             <div class="product-quantity">
                                 <button>-</button>
                                 <input type="text" value="1">
@@ -361,8 +365,8 @@
                             <img src="img/main_products/m1.jpg" alt="">
                         </div>
                         <div class="card_infor">
-                            <a href="#" class="title">Vòng thạch anh tóc cam VIP 8mm</a><br>
-                            <span class="price">2.484.000 đ</span>
+                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
+                            <span class="price">55.000 đ</span>
                             <div class="product-quantity">
                                 <button>-</button>
                                 <input type="text" value="1">
@@ -378,8 +382,8 @@
                             <img src="img/main_products/m1.jpg" alt="">
                         </div>
                         <div class="card_infor">
-                            <a href="#" class="title">Vòng thạch anh tóc cam VIP 8mm</a><br>
-                            <span class="price">2.484.000 đ</span>
+                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
+                            <span class="price">55.000 đ</span>
                             <div class="product-quantity">
                                 <button>-</button>
                                 <input type="text" value="1">
@@ -409,23 +413,39 @@
         <div class="body_page-footer">
             <div class="empty_page"></div>
             <div class="CartTotals">
+                <div class="notes-section">
+                    <h3>Ghi chú cho nhân viên</h3>
+                    <ul id="default-notes">
+                        <li>Cà Phê Sữa Đá size nhỏ bỏ ít đường nhé bạn!</li>
+                        <li>Không thêm topping!</li>
+                        <li>Gói kỹ giúp mình, cảm ơn!</li>
+                    </ul>
+                    <textarea id="additional-notes" placeholder="Nhập thêm ghi chú..."></textarea>
+                </div>
+
+
                 <h2>Tổng tiền</h2>
                 <ul>
                     <li>
                         <span class="title">Tạm tính</span>
-                        <span class="price">2.484.000đ</span>
+                        <span class="price">182.000 đ</span>
                     </li>
                     <li>
                         <span class="title">Giảm giá</span>
-                        <span class="price">10.000đ</span>
+                        <span class="price">10.000 đ</span>
+                    </li>
+                    <li>
+                        <span class="title">Phí vận chuyển</span>
+                        <span class="price">20.000 đ</span>
                     </li>
                     <li>
                         <span class="title">Tổng</span>
-                        <span class="price">2.484.000đ</span>
+                        <span class="price">192.000 đ</span>
                     </li>
                 </ul>
                 <button class="totals_btns"><a href="checkout.html">Thanh toán</a></button>
             </div>
+
         </div>
 
 
@@ -484,7 +504,196 @@
     </div>
 
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartTable = document.querySelector('.table_main tbody');
+        const popupMessage = document.getElementById('popup-message');
+
+        // Hiển thị thông báo
+        function showMessage(message) {
+            popupMessage.textContent = message;
+            popupMessage.style.display = 'block';
+            setTimeout(() => {
+                popupMessage.style.display = 'none';
+            }, 2000);
+        }
+
+        // Xử lý tăng/giảm số lượng
+        cartTable.addEventListener('click', function (e) {
+            const btn = e.target;
+            const quantityInput = btn.closest('.cart-plus-minus').querySelector('input');
+            const row = btn.closest('tr');
+            const priceElement = row.querySelector('.product-price span');
+            const totalElement = row.querySelector('.product-total span');
+
+            let quantity = parseInt(quantityInput.value, 10);
+            const price = parseInt(priceElement.textContent.replace(/[^\d]/g, ''), 10);
+
+            if (btn.classList.contains('inc')) {
+                quantity++;
+            } else if (btn.classList.contains('dec') && quantity > 0) {
+                quantity--;
+            }
+
+            quantityInput.value = quantity;
+            totalElement.textContent = (price * quantity).toLocaleString() + ' đ';
+
+            // Nếu số lượng là 0, hiển thị thông báo hoặc thực hiện xóa hàng
+            if (quantity === 0) {
+                showMessage('Sản phẩm đã giảm về 0!');
+            }
+        });
+
+        // Xử lý xóa sản phẩm
+        cartTable.addEventListener('click', function (e) {
+            if (e.target.closest('.product-remove button')) {
+                const row = e.target.closest('tr');
+                row.remove();
+                showMessage('Đã xóa sản phẩm khỏi giỏ hàng!');
+            }
+        });
+    });
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartTable = document.querySelector('.table_main tbody');
+        const popupMessage = document.getElementById('popup-message');
+        const checkoutButton = document.querySelector('.totals_btns a');
+
+        // Hiển thị thông báo popup
+        function showMessage(message) {
+            popupMessage.textContent = message;
+            popupMessage.style.display = 'block';
+            setTimeout(() => {
+                popupMessage.style.display = 'none';
+            }, 2000);
+        }
+
+        // Xử lý xóa sản phẩm
+        cartTable.addEventListener('click', function (e) {
+            if (e.target.closest('.product-remove button')) {
+                const row = e.target.closest('tr');
+                row.remove();
+                showMessage('Đã xóa sản phẩm khỏi giỏ hàng!');
+            }
+        });
+
+        // Xử lý khi nhấn nút thanh toán
+        checkoutButton.addEventListener('click', function (e) {
+            e.preventDefault(); // Ngăn chặn điều hướng trang ngay lập tức
+            showMessage('Đặt hàng thành công!');
+            setTimeout(() => {
+                window.location.href = checkoutButton.href; // Điều hướng sau khi hiển thị thông báo
+            }, 2000);
+        });
+    });
+</script>
+<script>
+    document.querySelector('.totals_btns a').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Lấy tất cả ghi chú cố định
+        const defaultNotes = Array.from(document.querySelectorAll('#default-notes li')).map(li => li.textContent);
+
+        // Lấy ghi chú bổ sung từ textarea
+        const additionalNotes = document.getElementById('additional-notes').value.trim();
+
+        // Kết hợp ghi chú
+        let allNotes = defaultNotes;
+        if (additionalNotes) {
+            allNotes.push(additionalNotes);
+        }
+
+        console.log('Ghi chú:', allNotes.join('; ')); // Ghi chú đầy đủ
+        alert('Đặt hàng thành công với các ghi chú:\n' + allNotes.join('\n'));
+
+        // Điều hướng đến trang thanh toán
+        window.location.href = this.href;
+    });
+
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const couponInput = document.querySelector('.couponCode input');
+        const couponButton = document.querySelector('.couponCode button');
+
+        // Hiển thị popup
+        function showPopup(message) {
+            const popupMessage = document.createElement('div');
+            popupMessage.style.position = 'fixed';
+            popupMessage.style.top = '20%';
+            popupMessage.style.left = '50%';
+            popupMessage.style.transform = 'translate(-50%, -50%)';
+            popupMessage.style.padding = '15px';
+            popupMessage.style.backgroundColor = '#4CAF50';
+            popupMessage.style.color = 'white';
+            popupMessage.style.borderRadius = '5px';
+            popupMessage.style.zIndex = '9999';
+            popupMessage.style.textAlign = 'center';
+            popupMessage.textContent = message;
+
+            document.body.appendChild(popupMessage);
+
+            setTimeout(() => {
+                popupMessage.remove();
+            }, 2000);
+        }
+
+        // Xử lý sự kiện nhấn nút "OK"
+        couponButton.addEventListener('click', function () {
+            const couponCode = couponInput.value.trim();
+            if (couponCode) {
+                showPopup('Nhập Mã giảm giá thành công');
+            } else {
+                showPopup('Vui lòng nhập mã giảm giá!');
+            }
+        });
+    });
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const clearCartButton = document.querySelector('.clearCart button');
+        const cartTable = document.querySelector('.table_main tbody');
+
+        // Hiển thị popup
+        function showPopup(message) {
+            const popupMessage = document.createElement('div');
+            popupMessage.style.position = 'fixed';
+            popupMessage.style.top = '20%';
+            popupMessage.style.left = '50%';
+            popupMessage.style.transform = 'translate(-50%, -50%)';
+            popupMessage.style.padding = '15px';
+            popupMessage.style.backgroundColor = '#4CAF50';
+            popupMessage.style.color = 'white';
+            popupMessage.style.borderRadius = '5px';
+            popupMessage.style.zIndex = '9999';
+            popupMessage.style.textAlign = 'center';
+            popupMessage.textContent = message;
+
+            document.body.appendChild(popupMessage);
+
+            setTimeout(() => {
+                popupMessage.remove();
+            }, 2000);
+        }
+
+        // Xử lý sự kiện nhấn "Xóa tất cả"
+        clearCartButton.addEventListener('click', function () {
+            if (cartTable) {
+                cartTable.innerHTML = ''; // Xóa tất cả các sản phẩm trong bảng
+                showPopup('Đã xóa tất cả sản phẩm trong giỏ hàng!');
+            }
+        });
+    });
+
+</script>
 </body>
 <script src="js/main.js"></script>
+
 
 </html>
