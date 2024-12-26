@@ -8,8 +8,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/checkout.css">
-    <title>Shop Bán Ngọc Quý</title>
+    <title>Shop Bán Coffee</title>
+    <style>
+        .tab-container {
+            width: 80%;
+            margin: 20px auto;
+        }
 
+        .item-1 .tabs {
+            display: flex;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background-color: #f9f9f9;
+            flex: 1;
+            text-align: center;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .get-location-btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .get-location-btn:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,11 +103,11 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </a>
                         <ul class="header_page-category-sub-menu">
-                            <li><a href="">Nhẫn</a></li>
-                            <li><a href="">Hoa tai</a></li>
-                            <li><a href="">Dây chuyền</a></li>
-                            <li><a href="">Vòng tay</a></li>
-                            <li><a href="">Mặt dây chuyền</a></li>
+                            <li><a href="">Coffe</a></li>
+                            <li><a href="">Trà Trái Cây</a></li>
+                            <li><a href="">Trà Sữa</a></li>
+                            <li><a href="">Đá Xay</a></li>
+                            <li><a href="">Bánh Ngọt</a></li>
                         </ul>
                     </li>
                     <li><a href="">Trang<i class="fa-solid fa-chevron-down"></i></a>
@@ -85,11 +157,11 @@
                     </a> -->
                             <div class="main-menu-content">
                                 <ul>
-                                    <li><a href="" style="font-weight: normal">Nhẫn</a></li>
-                                    <li><a href="" style="font-weight: normal">Hoa tai</a></li>
-                                    <li><a href="" style="font-weight: normal">Dây chuyên</a></li>
-                                    <li><a href="" style="font-weight: normal">Vòng tay</a></li>
-                                    <li><a href="" style="font-weight: normal">Mặt dây chuyền</a></li>
+                                    <li><a href="" style="font-weight: normal">Coffe</a></li>
+                                    <li><a href="" style="font-weight: normal">Trà Trái Cây</a></li>
+                                    <li><a href="" style="font-weight: normal">Trà Sữa</a></li>
+                                    <li><a href="" style="font-weight: normal">Đá Xay</a></li>
+                                    <li><a href="" style="font-weight: normal">Bánh Ngọt</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -243,54 +315,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <label for="companyName">Tên Công Ty</label>
-                                <input type="text" id="companyName" placeholder="Tên Công Ty">
-                            </div>
-                        </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <label for="streetAddress">Số Nhà, Tên Đường <span style="color: red">*</span></label>
-                                <input type="text" id="streetAddress" placeholder="Số Nhà, Tên Đường">
-                            </div>
-                        </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <label for="ward">Phường / Xã <span style="color: red">*</span></label>
-                                <input type="text" id="ward" placeholder="Phường / Xã">
-                            </div>
-                        </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <label for="district">Quận / Huyện <span style="color: red">*</span></label>
-                                <input type="text" id="district" placeholder="Quận / Huyện">
-                            </div>
-                        </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <label for="city">Tỉnh / Thành Phố <span style="color: red">*</span></label>
-                                <input type="text" id="city" placeholder="Tỉnh / Thành Phố">
-                            </div>
-                        </div>
                         <div class="item-2">
-                            <div class="item-1">
-                                <div class="input-text">
-                                    <label for="mail">Địa Chỉ Email <span style="color: red">*</span></label>
-                                    <input type="email" id="mail" placeholder="Địa Chỉ Email">
-                                </div>
-                            </div>
                             <div class="item-1">
                                 <div class="input-text">
                                     <label for="phone">Số Điện Thoại <span style="color: red">*</span></label>
                                     <input type="tel" id="phone" placeholder="Số Điện Thoại">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="item-1">
-                            <div class="input-text">
-                                <input type="checkbox" id="newAccount">
-                                <label for="newAccount" id="label-New-Account">Tạo Tài Khoản Mới?</label>
                             </div>
                         </div>
                         <div class="newAccount">
@@ -304,9 +334,67 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="difference-Add">Giao Tới Một Địa Chỉ Khác? <input type="checkbox" class="difference"
-                                                                                     style="width: 18px;height: 18px;">
-                        </h3>
+                        <div class="item-1">
+                            <!-- Tabs -->
+                            <ul class="tabs">
+                                <li class="tab active" data-tab="tab-current">Giao tới địa chỉ hiện tại</li>
+                                <li class="tab" data-tab="tab-other">Địa chỉ khác</li>
+                                <li class="tab" data-tab="tab-table">Giao tới bàn</li>
+                            </ul>
+
+                            <!-- Tab Content -->
+                            <div class="tab-content active" id="tab-current">
+                                <h3>Giao tới địa chỉ hiện tại</h3>
+                                <button class="get-location-btn">Lấy vị trí hiện tại</button>
+                                <div id="current-location">
+                                    <p>Vị trí hiện tại của bạn sẽ hiển thị tại đây.</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" id="tab-other">
+                                <h3>Nhập địa chỉ khác</h3>
+                                <div class="form-group">
+                                    <label for="other-address">Địa chỉ giao hàng:</label>
+                                    <input type="text" id="other-address" placeholder="Nhập địa chỉ">
+                                </div>
+                            </div>
+
+                            <div class="tab-content" id="tab-table">
+                                <h3>Giao tới bàn</h3>
+                                <div class="form-group">
+                                    <label for="shop-table">Chọn số bàn:</label>
+                                    <select id="shop-table">
+                                        <option value="address1">Bàn số 1</option>
+                                        <option value="address2">Bàn số 2</option>
+                                        <option value="address3">Bàn số 3</option>
+                                        <option value="address4">Bàn số 4</option>
+                                        <option value="address5">Bàn số 5</option>
+                                        <option value="address6">Bàn số 6</option>
+                                        <option value="address7">Bàn số 7</option>
+                                        <option value="address8">Bàn số 8</option>
+                                        <option value="address9">Bàn số 9</option>
+                                        <option value="address10">Bàn số 10</option>
+                                    </select>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shop-floor">Chọn tầng:</label>
+                                    <select id="shop-floor">
+                                        <option value="address1">Tầng 1</option>
+                                        <option value="address2">Tầng 2</option>
+                                        <option value="address3">Tầng 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shop-address">Chọn quán:</label>
+                                    <select id="shop-address">
+                                        <option value="address1">Quán Coffee 1 - Khu Phố 6, Linh Trung, Thủ Đức, Thành phố Hồ Chí Minh</option>
+                                        <option value="address2">Quán Coffee 2 - Đường Lê Văn Việt, Quận 9,Thành phố Hồ Chí Minh </option>
+                                        <option value="address3">Quán Coffee 3 - Gò Vấp, Tân Bình, Thành phố Hồ Chí Minh</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div id="difference-Add">
 
                             <div class="item-2">
@@ -388,19 +476,30 @@
                                 <thead>
                                 <tr>
                                     <th>Sản Phẩm</th>
+                                    <th>Số Lượng</th>
+                                    <th>Giá</th>
                                     <th>Tổng</th>
                                 </tr>
                                 </thead>
-                                <tbody></tbody>
+                                <tbody id="order-items">
+                                <!-- Sản phẩm mẫu -->
+                                <tr>
+                                    <td>Cà Phê Sữa Đá</td>
+                                    <td>2</td>
+                                    <td>30,000₫</td>
+                                    <td>60,000₫</td>
+                                </tr>
+                                <tr>
+                                    <td>Bánh Ngọt</td>
+                                    <td>1</td>
+                                    <td>40,000₫</td>
+                                    <td>40,000₫</td>
+                                </tr>
+                                </tbody>
                                 <tfoot>
                                 <tr class="cartSubtotal">
-                                    <th>Tổng Giỏ Hàng</th>
-                                    <td><span class="amount">0₫</span></td>
-                                </tr>
-                                <tr class="order-total">
-                                    <th style="border-bottom: none;">Tổng Đơn Hàng</th>
-                                    <td style="border-bottom: none;"><strong><span class="amount">0₫</span></strong>
-                                    </td>
+                                    <th colspan="3" style="text-align: right;">Tổng Giỏ Hàng:</th>
+                                    <td><span id="cart-total">100,000₫</span></td>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -491,6 +590,135 @@
     </div>
 
 </div>
+<script>
+    // Xử lý chuyển tab
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            const target = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                if (content.id === target) content.classList.add('active');
+            });
+        });
+    });
+    // Chọn bàn và tầng
+    function selectTable() {
+        const tableSelect = document.getElementById('table-number');
+        tableSelect.innerHTML = '';
+        for (let i = 1; i <= 15; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `Bàn ${i}`;
+            tableSelect.appendChild(option);
+        }
+    }
+
+
+    function selectFloor() {
+        const floorSelect = document.getElementById('floor-number');
+        floorSelect.innerHTML = '';
+        for (let i = 1; i <= 4; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `Tầng ${i}`;
+            floorSelect.appendChild(option);
+        }
+    }
+    // Lấy vị trí hiện tại
+    document.querySelector('.get-location-btn').addEventListener('click', () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const { latitude, longitude } = position.coords;
+                document.getElementById('current-location').innerHTML = `
+                        <p>Vĩ độ: ${latitude}, Kinh độ: ${longitude}</p>
+                        <iframe
+                            width="100%"
+                            height="200"
+                            src="https://www.google.com/maps?q=${latitude},${longitude}&output=embed">
+                        </iframe>
+                    `;
+            });
+        } else {
+            alert('Trình duyệt của bạn không hỗ trợ định vị!');
+        }
+    });
+
+    document.querySelector('.place-order').addEventListener('click', function (e) {
+        e.preventDefault(); // Ngăn chặn hành động mặc định
+
+        // Xóa thông báo lỗi cũ
+        document.querySelectorAll('.error-message').forEach(el => el.remove());
+        let isValid = true;
+
+        // Kiểm tra từng trường nhập liệu
+        function validateField(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            if (field && !field.value.trim()) {
+                isValid = false;
+
+                // Hiển thị thông báo lỗi nếu chưa có
+                if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('error-message')) {
+                    const error = document.createElement('div');
+                    error.className = 'error-message';
+                    error.style.color = 'red';
+                    error.style.fontSize = '12px';
+                    error.textContent = message;
+                    field.parentElement.appendChild(error);
+                }
+
+                // Cuộn đến trường bị lỗi đầu tiên
+                if (isValid === false && !document.querySelector('.error-message:first-of-type').scrollIntoView) {
+                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        }
+
+        // Kiểm tra thông tin chung
+        validateField('firstName', 'Vui lòng nhập Tên.');
+        validateField('lastName', 'Vui lòng nhập Họ.');
+        validateField('phone', 'Vui lòng nhập Số điện thoại.');
+
+        // Kiểm tra các trường nhập liệu theo tab được chọn
+        const activeTab = document.querySelector('.tab.active').getAttribute('data-tab');
+        if (activeTab === 'tab-other') {
+            validateField('other-address', 'Vui lòng nhập Địa chỉ giao hàng.');
+        } else if (activeTab === 'tab-current') {
+            const currentLocation = document.getElementById('current-location').textContent.trim();
+            if (currentLocation === 'Vị trí hiện tại của bạn sẽ hiển thị tại đây.') {
+                const locationField = document.querySelector('.get-location-btn');
+                if (!locationField.nextElementSibling || !locationField.nextElementSibling.classList.contains('error-message')) {
+                    const error = document.createElement('div');
+                    error.className = 'error-message';
+                    error.style.color = 'red';
+                    error.style.fontSize = '12px';
+                    error.textContent = 'Vui lòng lấy vị trí hiện tại.';
+                    locationField.parentElement.appendChild(error);
+                }
+                isValid = false;
+                locationField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        } else if (activeTab === 'tab-table') {
+            const table = document.getElementById('shop-table').value;
+            if (!table) {
+                validateField('shop-table', 'Vui lòng chọn Bàn.');
+            }
+        }
+
+        // Nếu hợp lệ
+        if (isValid) {
+            alert('Đặt hàng thành công!');
+            // Gửi thông tin đặt hàng tới server (nếu cần)
+            localStorage.setItem('orderMessage', 'Cảm ơn bạn đã đặt hàng tại cửa hàng chúng tôi!');
+
+            // Chuyển hướng về trang chủ
+            window.location.href = 'index.html';
+        }
+    });
+
+</script>
 </body>
 <script src="js/main.js"></script>
 <script src="js/checkout.js"></script>
