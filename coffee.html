@@ -13,136 +13,14 @@
 <body>
 <div id="product_page">
     <!-- Header page -->
-    <div class="header_page">
-        <div class="header_page-main">
-
-            <div class="header_page-logo">
-                <a href="index.html"><img src="img/logo.png" alt=""></a>
-            </div>
-
-            <div class="header_page-category">
-
-                <ul class="header_page-category-main-menu">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="product.html"> Sản phẩm
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </a>
-                        <ul class="header_page-category-sub-menu">
-                            <li><a href="">Nhẫn</a></li>
-                            <li><a href="">Hoa tai</a></li>
-                            <li><a href="">Dây chuyền</a></li>
-                            <li><a href="">Vòng tay</a></li>
-                            <li><a href="">Mặt dây chuyền</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Trang<i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="header_page-category-sub-menu">
-                            <li><a href="login.html" style="font-weight: normal">Đăng nhập</a></li>
-                            <li><a href="cart.html" style="font-weight: normal">Giỏ hàng</a></li>
-                            <li><a href="about.html" style="font-weight: normal">Giới thiệu</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Liên hệ</a></li>
-                </ul>
-
-            </div>
-
-            <!--  -->
-            <div class="header_page-btns non-reponsive">
-                <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>Tìm
-                    kiếm
-                </button>
-                <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i>Giỏ hàng(100)</a></button>
-                <button><a href="login.html"><i class="fa-solid fa-user"></i>Tài khoản</a></button>
-            </div>
-            <!--  -->
-            <div class="header_page-btns responsive">
-                <div class="nav">
-                    <button class="navbar"><i class="fa-solid fa-bars"></i></button>
-                </div>
-
-                <div class="right_btn">
-                    <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></button>
-                    <button><a href="login.html"><i class="fa-solid fa-user"></i></a></button>
-                </div>
-
-                <div class="category_header-responsive">
-                    <ul class="main-menu">
-                        <li><a href="index.html">Trang chủ</a></li>
-                        <li class="main-menu-list">
-                            <div class="main-menu-title">
-                                <a href="product.html">
-                                    <h1>Coffee</h1>
-                                </a>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            
-                            <!-- <a href="product.html"> Sản phẩm
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a> -->
-                            <div class="main-menu-content">
-                                <ul>
-                                    <li><a href="" style="font-weight: normal">Coffee</a></li>
-                                    <li><a href="" style="font-weight: normal">Trà Trái Cây</a></li>
-                                    <li><a href="" style="font-weight: normal">Trà Sữa/a></li>
-                                    <li><a href="" style="font-weight: normal">Đá Xay</a></li>
-                                    <li><a href="" style="font-weight: normal">Bánh Ngọt</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="main-menu-list">
-                            <div class="main-menu-title">
-                                <h1>Trang</h1>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <div class="main-menu-content">
-                                <ul>
-                                    <!-- <li><a href=""></a>Đăng ký</li> -->
-                                    <li><a href="login.html" style="font-weight: normal">Đăng nhập</a></li>
-                                    <li><a href="cart.html" style="font-weight: normal">Giỏ hàng</a></li>
-                                    <li><a href="about.html" style="font-weight: normal">Giới thiệu</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="contact.html">Liên hệ</a></li>
-                    </ul>
-                    <button class="closeBtn"><i class="fa-solid fa-xmark"></i></button>
-                    <div class="hidden-menu"></div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="header_page-modal-search">
-
-        <div class="main-modal">
-            <div class="main-modal-close-btn">
-                <button type="button"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="main-modal-title">
-                <h1>Tìm kiếm</h1>
-            </div>
-            <div class="main-modal-category">
-                <ul>
-                    <li>Tất cả</li>
-                    <li>Coffee</li>
-                    <li>Trà Trái Cây</li>
-                    <li>Trà Sữa</li>
-                    <li>Đá Xay</li>
-                    <li>Bánh Ngọt</li>
-                </ul>
-            </div>
-            <div class="main-modal-search">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>
-        <div class="hide-modal-search"></div>
-
-    </div>
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          });
+      </script>
     <!--banner-->
     
     <div class="body_page-menu">
@@ -170,13 +48,13 @@
                             </div>
                             <div class="sidebar_widget-content">
                                 <ul>
-                                    <li class="list_item dropdown"><a href="">Coffee<i class="fa-solid fa-chevron-right"></i></a>
+                                    <li class="list_item dropdown"><a href="coffee.html">Coffee<i class="fa-solid fa-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="">Coffee Phin</a></li>
                                             <li><a href="">Coffee Máy</a></li>
                                         </ul>
                                     </li>
-                                    <li class="list_item dropdown"><a href="">Trà Trái Cây<i class="fa-solid fa-chevron-right"></i></a>
+                                    <li class="list_item dropdown"><a href="tea.html">Trà Trái Cây<i class="fa-solid fa-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="">Trà Ổi</a></li>
                                             <li><a href="">Trà Đào</a></li>
@@ -185,7 +63,7 @@
                                         
                                         </ul>
                                     </li>
-                                    <li class="list_item dropdown"><a href="">Trà Sữa<i class="fa-solid fa-chevron-right"></i></a>
+                                    <li class="list_item dropdown"><a href="milktea.html">Trà Sữa<i class="fa-solid fa-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="">Trà Sữa Truyền thống</a></li>
                                             <li><a href="">Trà Sữa Thái</a></li>
@@ -193,7 +71,7 @@
                                             <li><a href="">Trà Sữa Lài</a></li>
                                         </ul>
                                     </li>
-                                    <li class="list_item dropdown"><a href="">Đá Xay<i class="fa-solid fa-chevron-right"></i></a>
+                                    <li class="list_item dropdown"><a href="ice_drink.html">Đá Xay<i class="fa-solid fa-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="">Matcha</a></li>
                                             <li><a href="">Socola</a></li>
@@ -201,7 +79,7 @@
                         
                                         </ul>
                                     </li>
-                                    <li class="list_item dropdown"><a href="">Bánh Ngọt<i class="fa-solid fa-chevron-right"></i></a>
+                                    <li class="list_item dropdown"><a href="cake.html">Bánh Ngọt<i class="fa-solid fa-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="">Bánh Lạnh</a></li>
                                             <li><a href="">Bánh quy</a></li>
@@ -221,15 +99,15 @@
                                     <div class="progress"></div>
                                 </div>
                                 <div class="range-input">
-                                    <input type="range" class="range-min" min="0" max="6000000" value="1200000" step="50000">
-                                    <input type="range" class="range-max" min="0" max="6000000" value="3600000" step="50000">
+                                    <input type="range" class="range-min" min="0" max="200000" value="20000" step="5000">
+                                    <input type="range" class="range-max" min="20000" max="200000" value="50000" step="5000">
                                 </div>
                                 <div class="price-input">
                                     <div class="field">
                                         <span style="margin-right: 5px;">Giá: </span>
-                                        <input type="text" class="input-min" value="1200000">
+                                        <input type="text" class="input-min" value="20000">
                                         <span class="separator">-</span>
-                                        <input type="text" class="input-max" value="3600000">
+                                        <input type="text" class="input-max" value="50000">
                                     </div>
                                 </div>
                             </div>

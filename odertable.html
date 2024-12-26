@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Reservation</title>
+    <title>NLU Coffee-Đặt bàn</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
             background-image:url('img/background.jpg');
@@ -147,6 +154,15 @@
     </style>
 </head>
 <body>
+
+    <div id="header"></div>
+        <script>
+            fetch('header.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('header').innerHTML = data;
+              });
+          </script>
     <div class="container">
         <h1>Đặt bàn</h1>
         <div class="floor-buttons">
@@ -221,5 +237,13 @@
         // Initial render
         renderTables();
     </script>
+     <div id="footer"></div>
+     <script>
+         fetch('footer.html')
+           .then(response => response.text())
+           .then(data => {
+             document.getElementById('footer').innerHTML = data;
+           });
+       </script>
 </body>
 </html>

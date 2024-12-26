@@ -451,11 +451,11 @@ input[type="range"]::-moz-range-thumb{
     margin-bottom: 5px;
 }
 .footer_area{
-    background-color: #151616;
+    background-color: #ebf1d8;
 }
 .footer_page h3{
     font-weight: 600;
-    color: #fff;
+    color: #000000;
 }
 .footer_page ul{
     margin-bottom: 0 !important;
