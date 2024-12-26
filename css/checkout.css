@@ -11,6 +11,51 @@
     width: 100%;
     background: #fff;
 }
+/* Đảm bảo cột Sản Phẩm không thụt lùi */
+.right-container .order-table th:nth-child(1),
+.right-container .order-table td:nth-child(1) {
+    text-align: left; /* Căn trái */
+    padding-left: 0; /* Loại bỏ khoảng cách bên trái */
+    padding-right: 15px; /* Tạo khoảng cách hợp lý với cột tiếp theo */
+    width: 40%; /* Đảm bảo kích thước đủ rộng */
+}
+
+/* Điều chỉnh các cột còn lại để đồng bộ */
+.right-container .order-table th,
+.right-container .order-table td {
+    padding: 10px 15px; /* Khoảng cách chung */
+}
+
+/* Các cột khác vẫn giữ căn chỉnh riêng */
+.right-container .order-table th:nth-child(2),
+.right-container .order-table td:nth-child(2) {
+    text-align: center;
+    width: 20%;
+}
+
+.right-container .order-table th:nth-child(3),
+.right-container .order-table td:nth-child(3),
+.right-container .order-table th:nth-child(4),
+.right-container .order-table td:nth-child(4) {
+    text-align: right;
+    width: 20%;
+}
+/* Căn chỉnh dòng Tổng Giỏ Hàng */
+.right-container .order-table .cartSubtotal th {
+    text-align: right; /* Căn phải nội dung Tổng Giỏ Hàng */
+    padding-right: 0px; /* Đẩy qua phải thêm một chút */
+}
+
+/* Căn sát lề phải cho số tiền Tổng Giỏ Hàng */
+.right-container .order-table .cartSubtotal td {
+    text-align: right; /* Căn phải */
+    padding-right: 0; /* Loại bỏ khoảng cách thừa bên phải */
+    margin-right: 0; /* Đảm bảo không có khoảng cách do margin */
+    width: 100%; /* Đẩy hoàn toàn sang bên phải */
+}
+
+
+
 .body_page {
     width: 100%;
     overflow: auto;

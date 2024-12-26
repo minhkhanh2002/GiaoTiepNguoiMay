@@ -575,6 +575,53 @@
         </div>
 
     </div>
+    <script>
+        // Kiểm tra thông báo đặt hàng
+        const orderMessage = localStorage.getItem('orderMessage');
+        if (orderMessage) {
+            // Tạo phần tử hiển thị thông báo
+            const messageDiv = document.createElement('div');
+            messageDiv.style.backgroundColor = '#f0f8ff';
+            messageDiv.style.color = '#4CAF50';
+            messageDiv.style.padding = '15px';
+            messageDiv.style.textAlign = 'center';
+            messageDiv.style.marginBottom = '20px';
+            messageDiv.style.fontSize = '18px';
+            messageDiv.style.position = 'relative';
+            messageDiv.style.border = '1px solid #4CAF50';
+            messageDiv.style.borderRadius = '5px';
+
+            // Tạo nội dung thông báo
+            const messageText = document.createElement('span');
+            messageText.textContent = orderMessage;
+
+            // Tạo nút đóng
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'X';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '5px';
+            closeButton.style.right = '10px';
+            closeButton.style.backgroundColor = 'transparent';
+            closeButton.style.border = 'none';
+            closeButton.style.color = '#4CAF50';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.fontSize = '16px';
+
+            // Gắn sự kiện nhấn nút đóng
+            closeButton.addEventListener('click', () => {
+                messageDiv.remove(); // Xóa thông báo
+                localStorage.removeItem('orderMessage'); // Xóa thông báo khỏi localStorage
+            });
+
+            // Thêm nội dung và nút vào thông báo
+            messageDiv.appendChild(messageText);
+            messageDiv.appendChild(closeButton);
+
+            // Thêm thông báo vào phần đầu trang
+            document.body.insertBefore(messageDiv, document.body.firstChild);
+        }
+    </script>
+
 </body>
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
