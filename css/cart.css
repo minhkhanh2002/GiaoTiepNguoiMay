@@ -150,6 +150,9 @@ a:hover {
 .product-name {
     width: 30%;
 }
+.product-size {
+    width: 5%;
+}
 
 .table_main .product-quantity,
 .product-remove {
