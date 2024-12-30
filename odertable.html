@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NLU Coffee-Đặt bàn</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLU Coffee - Đặt bàn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
-            background-image:url('img/background.jpg');
+            background-image: url('img/background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -22,8 +19,6 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            
-            
         }
         .container {
             max-width: 800px;
@@ -32,9 +27,6 @@
             background: #FFFDF0;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .floor-buttons {
-            margin-bottom: 20px;
         }
         .floor-buttons button {
             padding: 10px 20px;
@@ -55,7 +47,7 @@
             margin: 20px 0;
             color: #fff;
             line-height: 50px;
-            font-size: 16px;
+            font-size: 24px;
             text-transform: uppercase;
             border-radius: 4px;
         }
@@ -75,7 +67,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 18px;
             transition: transform 0.3s;
         }
         .table:hover {
@@ -88,32 +80,64 @@
             outline: 3px solid #d63031;
             cursor: not-allowed;
         }
-        .legend {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .legend div {
-            margin: 0 10px;
-            display: flex;
-            align-items: center;
-        }
-        .legend span {
-            width: 20px;
-            height: 20px;
-            margin-right: 5px;
-            display: inline-block;
-            border-radius: 4px;
-        }
-        .legend .available span {
-            background: #ddd;
-        }
-        .legend .selected span {
-            background: #6c5ce7;
-        }
-        .legend .occupied span {
-            background: #d63031;
-        }
+
+        #popup p {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #popup form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #popup label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    #popup input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    #popup button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        margin: 10px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #popup .close {
+        font-size: 14px;
+        background: #ff0000;
+        color: #fff;
+    }
+
+    #popup .action {
+        font-size: 14px;
+        background: #55c965;
+        color: #fff;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+    }
         #popup {
             position: fixed;
             top: 50%;
@@ -125,16 +149,19 @@
             border-radius: 8px;
             display: none;
             z-index: 1000;
+            width: 300px; /* Set a fixed width for consistency */
+        text-align: center; 
         }
         #popup button {
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
-            margin: 10px;
+            margin: 0.5px;
             cursor: pointer;
         }
         #popup .close {
-            background: #d63031;
+            
+            background: #ff0000;
             color: #fff;
         }
         #popup .action {
@@ -151,18 +178,29 @@
             display: none;
             z-index: 999;
         }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
-
+    <!-- Header page -->
     <div id="header"></div>
-        <script>
-            fetch('header.html')
-              .then(response => response.text())
-              .then(data => {
-                document.getElementById('header').innerHTML = data;
-              });
-          </script>
+    <script>
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          });
+      </script>
     <div class="container">
         <h1>Đặt bàn</h1>
         <div class="floor-buttons">
@@ -171,17 +209,25 @@
         </div>
         <div class="screen">Sơ đồ tầng 1</div>
         <div class="tables"></div>
-        <div class="legend">
-            <div class="available"><span></span> Bàn trống</div>
-            <div class="selected"><span></span> Bàn đang chọn</div>
-            <div class="occupied"><span></span> Bàn đã có người</div>
+        <div class="floor-buttons">
+            <button href="index.html" style="background-color: chocolate">Quay về trang chủ</button>
+            
         </div>
     </div>
 
     <div id="overlay"></div>
     <div id="popup">
-        <p id="popup-message"></p>
-        <button class="action" id="popup-action"></button>
+        <form id="reservationForm" style="display: none;">
+            <h3>Thông tin đặt bàn</h3>
+            <label for="username">Tên người dùng:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="time">Thời gian đến:</label>
+            <input type="datetime-local" id="time" name="time" required>
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <button type="button" onclick="confirmReservation()">Xác nhận</button>
+        </form>
+        <p id="popup-message" style="display: none;"></p>
         <button class="close" onclick="closePopup()">Đóng</button>
     </div>
 
@@ -191,7 +237,7 @@
         const popup = document.getElementById('popup');
         const overlay = document.getElementById('overlay');
         const popupMessage = document.getElementById('popup-message');
-        const popupAction = document.getElementById('popup-action');
+        const reservationForm = document.getElementById('reservationForm');
 
         const layouts = {
             1: [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
@@ -207,9 +253,13 @@
                 table.classList.add('table');
                 if (status === 1) {
                     table.classList.add('occupied');
-                    table.addEventListener('click', () => showPopup('Bàn này đã có người, xin vui lòng chọn bàn khác. Hoặc bạn muốn gọi đồ cho bàn này?', 'Gọi đồ'));
+                    table.addEventListener('click', () => 
+                        showPopup('Bàn này đã có người, xin vui lòng chọn bàn khác.', 'Đóng')
+                    );
                 } else {
-                    table.addEventListener('click', () => showPopup('Bàn này hiện đang trống, bạn có muốn chọn không?', 'Đặt bàn'));
+                    table.addEventListener('click', () => 
+                        showPopup('Bàn này hiện đang trống, bạn có muốn đặt không?', 'Đặt bàn')
+                    );
                 }
                 table.textContent = index + 1;
                 tablesContainer.appendChild(table);
@@ -223,8 +273,14 @@
         }
 
         function showPopup(message, actionText) {
-            popupMessage.textContent = message;
-            popupAction.textContent = actionText;
+            if (actionText === 'Đặt bàn') {
+                reservationForm.style.display = 'block';
+                popupMessage.style.display = 'none';
+            } else {
+                reservationForm.style.display = 'none';
+                popupMessage.style.display = 'block';
+                popupMessage.textContent = message;
+            }
             popup.style.display = 'block';
             overlay.style.display = 'block';
         }
@@ -234,16 +290,23 @@
             overlay.style.display = 'none';
         }
 
+        function confirmReservation() {
+            const username = document.getElementById('username').value;
+            const time = document.getElementById('time').value;
+            const phone = document.getElementById('phone').value;
+
+            if (username && time && phone) {
+                alert(`Đặt bàn thành công!\nTên: ${username}\nThời gian: ${time}\nSĐT: ${phone}`);
+                closePopup();
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        }
+
         // Initial render
         renderTables();
     </script>
-     <div id="footer"></div>
-     <script>
-         fetch('footer.html')
-           .then(response => response.text())
-           .then(data => {
-             document.getElementById('footer').innerHTML = data;
-           });
-       </script>
+    <!-- footer page -->
+    
 </body>
 </html>
