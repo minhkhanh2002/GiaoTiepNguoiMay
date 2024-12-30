@@ -203,9 +203,9 @@
       </script>
     <div class="container">
         <h1>Đặt bàn</h1>
-        <div class="floor-buttons">
-            <button onclick="switchFloor(1)">Tầng 1</button>
-            <button onclick="switchFloor(2)">Tầng 2</button>
+        <div class="floor-buttons" >
+            <button onclick="switchFloor(1)" style="background-color: chocolate">Tầng 1</button>
+            <button onclick="switchFloor(2)" style="background-color: chocolate">Tầng 2</button>
         </div>
         <div class="screen">Sơ đồ tầng 1</div>
         <div class="tables"></div>
@@ -225,7 +225,7 @@
             <input type="datetime-local" id="time" name="time" required>
             <label for="phone">Số điện thoại:</label>
             <input type="tel" id="phone" name="phone" required>
-            <button type="button" onclick="confirmReservation()">Xác nhận</button>
+            <button type="button" onclick="confirmReservation()" style="background-color: #55c965; color: #fff;">Xác nhận</button>
         </form>
         <p id="popup-message" style="display: none;"></p>
         <button class="close" onclick="closePopup()">Đóng</button>
