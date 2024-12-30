@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  body{background-color: #eeeeee;font-family: 'Open Sans',serif}
+  .container{margin-top:50px;margin-bottom: 50px}
+  .card{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.10rem}
+    .card-header:first-child{
+        border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}
+    .card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}
+    .track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px}
+    .track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}
+    .track .step.active:before{background: #FF5722}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}
+    .track .step.active .icon{background: #ee5435;color: #fff}
+    .track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}
+    .track .step.active .text{font-weight: 400;color: #000}
+    .track .text{display: block;margin-top: 7px}
+    .itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}
+    .itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}
+    .img-sm{width: 80px;height: 80px;padding: 7px}
+    ul.row, ul.row-sm{list-style: none;padding: 0}
+    .itemside .info{padding-left: 15px;padding-right: 7px}
+    .itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}
+    .btn-warning{color: #ffffff;background-color: #ee5435;border-color: #ee5435;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
+    #cancel-popup {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+  }
+  #cancel-popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #cancel-popup button:hover {
+    background-color: #45a049;
+  }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +74,7 @@
 
     <link rel="stylesheet" href="css/cart.css">
     <title>Shop Bán Coffe</title>
-
+    
 </head>
 
 <body>
@@ -50,262 +114,87 @@
             </ul>
         </div>
 
-        <div class="table_main">
-
-            <table class="table table-responsive">
-
-                <thead>
-                <tr>
-                    <th class="product-thumbnail">Hình ảnh</th>
-                    <th class="product-name">Tên sản phẩm</th>
-                    <th class="product-size" >Size</th>
-                    <th class="product-topping">Topping</th>
-                    <th class="product-price">Giá</th>
-                    <th class="product-quantity">Số lượng</th>
-                    <th class="product-note">Ghi chú</th>
-                    <th class="product-total">Tổng</th>
-                   
-                    <!-- <i class="fa-solid fa-xmark"></i> -->
-                </tr>
-                </thead>
-
-                <!-- content -->
-                <tbody>
-
-                <!-- product -->
-                <tr>
-                    <th class="product-thumbnail">
-                        <a href="#">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Cà Phê Sữa Đá 
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Nhỏ 
-                        </a>
-                    </th>
-                    <th class="product-topping">
-                        <a href="#">
-                           Sốt Caramel
-                        </a>
-                    </th>
-                    <th class="product-price">
-                <span>
-                  39.000 đ
-                </span>
-                    </th>
-                    <th class="product-quantity">
-                        <span>2</span>
-                    </th>
-                    <th class="product-note">
-                        <a href="#">
-                           Ít đá
-                        </a>
-                    </th>
-                    <th class="product-total">
-                        <span>39.000 đ</span>
-                    </th>
+        <div class="container">
+            <article class="card">
+                <div id="cancel-popup">
+                    <p>Bạn chỉ có thể hủy đơn hàng khi đơn hàng ở trạng thái "Đang xác nhận".</p>
+                    <button onclick="closePopup()">Đóng</button>
+                  </div>
+                
+                <div class="card-body">
+                    <h3>Mã đơn hàng: CF9141DL</h3>
                     
-                </tr>
-                <!-- product -->
-                <tr>
-                    <th class="product-thumbnail">
-                        <a href="#">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Cà Phê Sữa Đá 
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Nhỏ 
-                        </a>
-                    </th>
-                    <th class="product-topping">
-                        <a href="#">
-                           Sốt Caramel
-                        </a>
-                    </th>
-                    <th class="product-price">
-                <span>
-                  39.000 đ
-                </span>
-                    </th>
-                    <th class="product-quantity">
-                        <span>2</span>
-                    </th>
-                    <th class="product-note">
-                        <a href="#">
-                           Ít đá
-                        </a>
-                    </th>
-                    <th class="product-total">
-                        <span>39.000 đ</span>
-                    </th>
+                        <div class="card-header" >
+                            <div class="col"> <strong>Ngày mua hàng:</strong> <br>31-12-2024</div>
+                            <div class="col"> <strong>Đơn vị vận chuyển:</strong> <br> ViettelPost, | <i class="fa fa-phone"></i> 039398xx19 </div>
+                            <div class="col"> <strong>Trạng thái:</strong> <br> Đang chuẩn bị </div>
+                            <div class="col"> <strong>Thông tin người nhận:</strong> <br> Minh Khánh </div>
+                            <div class="col"> <strong>Số điện thoại người nhận:</strong> <br> 0865872632 </div>
+                            <br class="col"> <strong>Địa chỉ:</strong> <br>Khoa CNTT, Trường đại học Nông Lâm - TPHCM </br> phường Linh Trung, thành phố Thủ Đức - TPHCM </div>
+                        </div>
                     
-                </tr>
-
-                <!-- product -->
-                <tr>
-                    <th class="product-thumbnail">
-                        <a href="#">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Cà Phê Sữa Đá 
-                        </a>
-                    </th>
-                    <th class="product-name">
-                        <a href="#">
-                            Nhỏ 
-                        </a>
-                    </th>
-                    <th class="product-topping">
-                        <a href="#">
-                           Sốt Caramel
-                        </a>
-                    </th>
-                    <th class="product-price">
-                <span>
-                  39.000 đ
-                </span>
-                    </th>
-                    <th class="product-quantity">
-                        <span>2</span>
-                    </th>
-                    <th class="product-note">
-                        <a href="#">
-                           Ít đá
-                        </a>
-                    </th>
-                    <th class="product-total">
-                        <span>39.000 đ</span>
-                    </th>
-                    
-                </tr>
-
-                <!-- product -->
-               
-
-                </tbody>
-
-            </table>
-
-            <div class="table table-non-responsive">
-
-                <ul>
-                    <li class="list_card">
-                        <div class="card_img">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </div>
-                        <div class="card_infor">
-                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
-                            <span class="price">55.000 đ</span>
-                            <div class="product-quantity">
-                                <span>
-                                    1
-                                  </span>
-                            </div>
-                        </div>
-                        <div class="deleteProduct">
-                            <button class="deleteProductBtn"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </li>
-                    <li class="list_card">
-                        <div class="card_img">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </div>
-                        <div class="card_infor">
-                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
-                            <span class="price">55.000 đ</span>
-                            <div class="product-quantity">
-                                <button>-</button>
-                                <input type="text" value="1">
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="deleteProduct">
-                            <button class="deleteProductBtn"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </li>
-                    <li class="list_card">
-                        <div class="card_img">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </div>
-                        <div class="card_infor">
-                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
-                            <span class="price">55.000 đ</span>
-                            <div class="product-quantity">
-                                <button>-</button>
-                                <input type="text" value="1">
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="deleteProduct">
-                            <button class="deleteProductBtn"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </li>
-                    <li class="list_card">
-                        <div class="card_img">
-                            <img src="img/main_products/m1.jpg" alt="">
-                        </div>
-                        <div class="card_infor">
-                            <a href="#" class="title">Cà Phê Sữa Đá size lớn  , Topping Sốt Caramel</a><br>
-                            <span class="price">55.000 đ</span>
-                            <div class="product-quantity">
-                                <button>-</button>
-                                <input type="text" value="1">
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="deleteProduct">
-                            <button class="deleteProductBtn"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-
+                    <div class="track">
+                        <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Xác nhận đơn hàng</span> </div>
+                        <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Đang chuẩn bị</span> </div>
+                        <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> Đang vận chuyển </span> </div>
+                        <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Đã nhận được hàng</span> </div>
+                    </div>
+                    <hr>
+                    <div class="card-header" >
+                        <div class="col"> <strong>Danh sách đơn hàng:</strong> </div>
+                    </div>
+                    <ul class="row">
+                        <li class="col-md-4">
+                            <figure class="itemside mb-3" >
+                                <div class="aside"><img src="img/product/Phin_Sua_Da.jpg" class="img-sm border"style="width: 150px; height: 150px;"></div>
+                                <figcaption class="info align-self-center">
+                                    <p class="title" style="font-family: Arial; font-size: 16px;">Cà phê sữa đá <br>x1 size L</p> <span class="text-muted">45.000đ </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="col-md-4">
+                            <figure class="itemside mb-3">
+                                <div class="aside"><img src="img/product/tra-o-long.png" class="img-sm border" style="width: 150px; height: 150px;"></div>
+                                <figcaption class="info align-self-center" >
+                                    <p class="title" sstyle="font-family: Arial; font-size: 16px;">Trà sữa Ô Long<br> x2 size M</p> <span class="text-muted">80.000đ</span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="col-md-4">
+                            <figure class="itemside mb-3">
+                                <div class="aside"><img src="img/product/tra-sua-matcha.png" class="img-sm border" style="width: 150px; height: 150px;"></div>
+                                <figcaption class="info align-self-center">
+                                    <p class="title" sstyle="font-family: Arial; font-size: 16px;">Matcha đá xay <br> x1 size L</p> <span class="text-muted">53.000đ </span>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <hr>
+                    <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+                </div>
+            </article>
         </div>
 
-        <div class="coupon_clear">
-            <div class="couponCode">
-                <input type="text" placeholder="Mã giảm giá">
-                <button>OK</button>
-            </div>
-            <div class="clearCart">
-                <button>Xóa tất cả</button>
-            </div>
-        </div>
+        
+
+        
+        
 
         <div class="body_page-footer">
             <div class="empty_page"></div>
             <div class="CartTotals">
-                <div class="notes-section">
-                    <h3>Ghi chú cho nhân viên</h3>
-                    <textarea id="additional-notes" placeholder="Nhập thêm ghi chú..."></textarea>
-                </div>
+               
 
 
                 <h2>Tổng tiền</h2>
                 <ul>
                     <li>
                         <span class="title">Tạm tính</span>
-                        <span class="price">182.000 đ</span>
+                        <span class="price">175.000 đ</span>
                     </li>
                     <li>
                         <span class="title">Giảm giá</span>
-                        <span class="price">10.000 đ</span>
+                        <span class="price">30.000 đ</span>
                     </li>
                     <li>
                         <span class="title">Phí vận chuyển</span>
@@ -313,10 +202,10 @@
                     </li>
                     <li>
                         <span class="title">Tổng</span>
-                        <span class="price">192.000 đ</span>
+                        <span class="price">165.000 đ</span>
                     </li>
                 </ul>
-                <button class="totals_btns"><a href="checkout.html">Thanh toán</a></button>
+                <button class="totals_btns" id="cancel-order-btn">Hủy đơn hàng</a></button>
             </div>
 
         </div>
@@ -338,6 +227,18 @@
 
 </body>
 <script src="js/main.js"></script>
-
+<script>
+    const cancelOrderBtn = document.getElementById('cancel-order-btn');
+    const cancelPopup = document.getElementById('cancel-popup');
+  
+    cancelOrderBtn.addEventListener('click', function (e) {
+      e.preventDefault(); // Ngăn điều hướng hoặc tải lại trang
+      cancelPopup.style.display = 'block'; // Hiển thị popup
+    });
+  
+    function closePopup() {
+      cancelPopup.style.display = 'none'; // Ẩn popup
+    }
+  </script>
 
 </html>
