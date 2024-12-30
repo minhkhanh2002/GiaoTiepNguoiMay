@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Coffee Shop</title>
+</head>
+
+<body>
+    <div class="main_page">
+
+        <!-- Header page -->
+        <div class="header_page">
+            <div class="header_page-main">
+        
+                <div class="header_page-logo">
+                    <a href="index.html"><img src="img/logo1.png" alt=""></a>
+                </div>
+        
+                <div class="header_page-category">
+        
+                    <ul class="header_page-category-main-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html"> Menu
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="header_page-category-sub-menu">
+                                <li><a href="coffee.html">Coffee</a></li>
+                                <li><a href="tea.html">Fruit Tea</a></li>
+                                <li><a href="milktea.html">Milk Tea</a></li>
+                                <li><a href="ice_drink.html">Blended Drink</a></li>
+                                <li><a href="cake.html">Cake</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="odertable.html">Order Table</a></li>
+                        <li><a href="about.html">Introduce</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+        
+                </div>
+        
+                <!--  -->
+                <div class="header_page-btns non-reponsive">
+                    <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>Search
+                    </button>
+                    <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i>Cart (4)</a></button>
+                    <button><a href="login.html"><i class="fa-solid fa-user"></i>Account</a></button>
+                    
+                </div>
+                <div class="language-switcher">
+                    <a href="index.html" title="Tiếng Việt"><img src="img/vn.png" alt="VN Flag"></a>
+                    <a href="index_en.html" title="English"><img src="img/en.png" alt="EN Flag"></a>
+                </div>
+                <div >
+                    <a href="">   </a>
+                </div>
+                <!--  -->
+                <div class="header_page-btns responsive">
+                    <div class="nav">
+                        <button class="navbar"><i class="fa-solid fa-bars"></i></button>
+                    </div>
+        
+                    <div class="right_btn">
+                        <button type="button" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></button>
+                        <button><a href="login.html"><i class="fa-solid fa-user"></i></a></button>
+                    </div>
+        
+                    <div class="category_header-responsive">
+                        <ul class="main-menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="main-menu-list">
+                                <div class="main-menu-title">
+                                    <a href="product.html">
+                                        <h1>Menu</h1>
+                                    </a>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <!-- <a href="product.html"> Sản phẩm
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a> -->
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <li><a href="" style="font-weight: normal">Coffee</a></li>
+                                        <li><a href="" style="font-weight: normal">Friut Tea</a></li>
+                                        <li><a href="" style="font-weight: normal">Milk Tea</a></li>
+                                        <li><a href="" style="font-weight: normal">Blended Drink</a></li>
+                                        <li><a href="" style="font-weight: normal">Cake</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="main-menu-list">
+                                <div class="main-menu-title">
+                                    <h1>Trang</h1>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <!-- <li><a href=""></a>Đăng ký</li> -->
+                                        <li><a href="login.html" style="font-weight: normal">Login</a></li>
+                                        <li><a href="cart.html" style="font-weight: normal">Cart</a></li>
+                                        <li><a href="about.html" style="font-weight: normal">Introduce</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <button class="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+                        <div class="hidden-menu"></div>
+                    </div>
+        
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="header_page-modal-search">
+        
+            <div class="main-modal" , style="background-color: #F2ECBE;">
+                <div class="main-modal-close-btn">
+                    <button type="button"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="main-modal-title">
+                    <h1>Search</h1>
+                </div>
+                <div class="main-modal-category">
+                    <ul>
+                        <li>All</li>
+                        <li>Coffee</li>
+                        <li>Fruit Tea</li>
+                        <li>Milk Tea</li>
+                        <li>Blended Drink</li>
+                        <li>Cake</li>
+                    </ul>
+                </div>
+                <div class="main-modal-search">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="hide-modal-search"></div>
+        
+        </div>
+
+        <!-- Body page -->
+        <div class="body_page">
+
+            <div class="body_page-slides">
+                <div class="body_page-slides-card">
+                    <a href=""><img src="img/Slider/slider01.png" alt="Banner Image 1"></a>
+                    <a href=""><img src="img/Slider/slider02.png" alt=""></a>
+                    <a href=""><img src="img/Slider/slider03.png" alt=""></a>
+                </div>
+                <div class="body_page-slides-card-btns">
+                    <div class="body_page-slides-card-list-btn">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body_page-popular-product">
+                <div class="body_page-popular-product-card">
+                    <a href=""><img src="img/banner/banner01.png" alt=""></a>
+                    <button><a href="product.html">Discover Now</a></button>
+                </div>
+                <div class="body_page-popular-product-card">
+                    <a href=""><img src="img/banner/banner02.jpg" alt=""></a>
+                    <button><a href="product.html">Discover Now</a></button>
+                </div>
+                <div class="body_page-popular-product-card">
+                    <a href=""><img src="img/banner/banner03.png" alt=""></a>
+                    <button><a href="product.html">Discover Now</a></button>
+                </div>
+            </div>
+
+            <div class="body_page-sub-product">
+                <div class="body_page-trending-product-title">
+                    <p>Best-Selling Products</p>
+                </div>
+                <div class="body_page-trending-product-des">
+                    <p>Products with the highest sales</p>
+                </div>
+
+                <div class="body_page-trending-product-list">
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <img src="img/details/coffee/ca-phe-sua-da.png" alt="">
+                        </div>
+                        <div class="card-title-price">
+                            <p>Iced Milk Coffee</p>
+                            <span>29,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <img src="img/product/tra-sua-matcha.png" alt="">
+                        </div>
+                        <div class="card-title-price">
+                            <p>Matcha Blended</p>
+                            <span>40,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="#">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <img src="img/product/tra-o-long.png" alt="">
+                        </div>
+                        <div class="card-title-price">
+                            <p>Oolong Milk Tea</p>
+                            <span>40,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="#">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <img src="img/product/65000072-sua-chua-phuc-bon-tu-dac-cam-phuc-long_23955f73-a6c0-4cca-b79c-b6342df26caf-og.png" alt="">
+                        </div>
+                        <div class="card-title-price">
+                            <p>Raspberry Yogurt</p>
+                            <span>50,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="#">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <img src="img/product/65000073-sua-chua-xoai-dac-thom-phuc-long_26595644-4b5d-4d95-a3ff-d0ccf06d6f1f-og.png" alt="">
+                        </div>
+                        <div class="card-title-price">
+                            <p>Mango Yogurt</p>
+                            <span>40,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="#">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="body_page-trending-product">
+
+                <div class="body_page-trending-product-title">
+                    <p>Products</p>
+                </div>
+                <div class="body_page-trending-product-des">
+                    <p>The latest products available</p>
+                </div>
+                <div class="body_page-trending-product-list">
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/milktea/sua-dau-tay-zqmjv2p7.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Strawberry Milk Tea</p>
+                            <span>29,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/tea/hong-tra-bi-dao-sccrscoa.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Winter Melon Black Tea</p>
+                            <span>30,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/tea/hong-tra-vai-thieu-2isu3y9o.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Litchi Black Tea</p>
+                            <span>28,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/milktea/tra-sua-socola-kryfxhvq.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Chocolate Milk Tea</p>
+                            <span>39,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/milktea/tra-sua-tran-chau-duong-den-8ke6swxe.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Brown Sugar Bubble Milk Tea</p>
+                            <span>39,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/milktea/tra-xanh-sua-efbubhnb.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Thai Green Milk Tea</p>
+                            <span>30,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/tea/tra-xanh-bi-dao-t9gm7g3c.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Winter Melon Green Tea</p>
+                            <span>34,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/milktea/tra-sua-dai-loan-qlgi7h4z.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Taiwan Milk Tea</p>
+                            <span>30,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/Phin_Sua_Da.jpg" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Traditional Iced Milk Coffee</p>
+                            <span>25,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="body_page-trending-product-list-card">
+                        <div class="card-image">
+                            <a href="productdetails.html"><img src="img/product/tra-tearamisu.png" alt=""></a>
+                        </div>
+                        <div class="card-title-price">
+                            <p>Tearamisu Tea</p>
+                            <span>45,000 ₫</span>
+                        </div>
+                        <div class="card-btn">
+                            <button><a href="productdetails.html">Details</a></button>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="body_page-subscribe">
+
+                <div class="body_page-subscribe-title">
+                    <h1>Subscribe for Discount Information</h1>
+                </div>
+
+                <div class="body_page-subscribe-des">
+                    <p>Sign up to receive updates on new products, special offers, and other discounts.</p>
+                </div>
+
+                <div class="body_page-subscribe-btn">
+                    <button>Subscribe</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer page -->
+        <div id="footer"></div>
+        <script>
+            fetch('footer.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('footer').innerHTML = data;
+              });
+        </script>
+    </div>
+    <script>
+        // Check for order message
+        const orderMessage = localStorage.getItem('orderMessage');
+        if (orderMessage) {
+            // Create a notification element
+            const messageDiv = document.createElement('div');
+            messageDiv.style.backgroundColor = '#f0f8ff';
+            messageDiv.style.color = '#4CAF50';
+            messageDiv.style.padding = '15px';
+            messageDiv.style.textAlign = 'center';
+            messageDiv.style.marginBottom = '20px';
+            messageDiv.style.fontSize = '18px';
+            messageDiv.style.position = 'relative';
+            messageDiv.style.border = '1px solid #4CAF50';
+            messageDiv.style.borderRadius = '5px';
+
+            // Create notification content
+            const messageText = document.createElement('span');
+            messageText.textContent = orderMessage;
+
+            // Create close button
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'X';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '5px';
+            closeButton.style.right = '10px';
+            closeButton.style.backgroundColor = 'transparent';
+            closeButton.style.border = 'none';
+            closeButton.style.color = '#4CAF50';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.fontSize = '16px';
+            setTimeout(() => {
+                messageDiv.remove(); // Remove notification
+                localStorage.removeItem('orderMessage'); // Clear notification from localStorage
+            }, 5000);
+
+            // Attach close button event
+            closeButton.addEventListener('click', () => {
+                messageDiv.remove(); // Remove notification
+                localStorage.removeItem('orderMessage'); // Clear notification from localStorage
+            });
+
+            // Add content and close button to notification
+            messageDiv.appendChild(messageText);
+            messageDiv.appendChild(closeButton);
+
+            // Add notification to the top of the page
+            document.body.insertBefore(messageDiv, document.body.firstChild);
+        }
+    </script>
+
+</body>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+
+</html>

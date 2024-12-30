@@ -361,6 +361,10 @@
             closeButton.style.color = '#4CAF50';
             closeButton.style.cursor = 'pointer';
             closeButton.style.fontSize = '16px';
+            setTimeout(() => {
+    messageDiv.remove(); // Xóa thông báo
+    localStorage.removeItem('orderMessage'); // Xóa thông báo khỏi localStorage
+}, 5000);
 
             // Gắn sự kiện nhấn nút đóng
             closeButton.addEventListener('click', () => {
