@@ -81,6 +81,47 @@
         iframe {
             border: none;
         }
+        .location-container {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .location-container h3 {
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .get-location-btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .get-location-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
@@ -220,13 +261,116 @@
                             </ul>
 
                             <!-- Tab Content -->
-                            <div class="tab-content active" id="tab-current">
+                            <div class="location-container">
                                 <h3>Giao tới địa chỉ hiện tại</h3>
-                                <button class="get-location-btn">Lấy vị trí hiện tại</button>
+                                <button class="get-location-btn">Lấy vị trí hiện tại của bạn</button>
                                 <div id="current-location">
                                     <p>Vị trí hiện tại của bạn sẽ hiển thị tại đây.</p>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="province">Chọn Tỉnh/Thành phố:</label>
+                                    <select id="province">
+                                        <option value="">Chọn Tỉnh/Thành phố</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="district">Chọn Quận/Huyện:</label>
+                                    <select id="district">
+                                        <option value="">Chọn Quận/Huyện</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ward">Chọn Phường/Xã:</label>
+                                    <select id="ward">
+                                        <option value="">Chọn Phường/Xã</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="street">Nhập Đường:</label>
+                                    <input type="text" id="street" placeholder="Nhập tên đường">
+                                </div>
                             </div>
+                            <div class="tab-content" id="tab-table">
+                                <h3>Giao tới bàn</h3>
+                                <div class="form-group">
+                                    <label for="shop-table">Chọn số bàn:</label>
+                                    <select id="shop-table">
+                                        <option value="">Chọn bàn</option>
+                                        <script>
+                                            for (let i = 1; i <= 15; i++) {
+                                                document.write(`<option value="ban${i}">Bàn số ${i}</option>`);
+                                            }
+                                        </script>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shop-floor">Chọn tầng:</label>
+                                    <select id="shop-floor">
+                                        <option value="">Chọn tầng</option>
+                                        <script>
+                                            for (let i = 1; i <= 3; i++) {
+                                                document.write(`<option value="tang${i}">Tầng ${i}</option>`);
+                                            }
+                                        </script>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shop-address">Chọn địa chỉ quán:</label>
+                                    <select id="shop-address">
+                                        <option value="address1">Quán Coffee 1 - Khu phố 6, Linh Trung, Thủ Đức, Thành phố Hồ Chí Minh</option>
+                                        <option value="address2">Quán Coffee 2 - Đường Lê Văn Việt, Quận 9, Thành phố Hồ Chí Minh</option>
+                                        <option value="address3">Quán Coffee 3 - Gò Vấp, Tân Bình, Thành phố Hồ Chí Minh</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <style>
+                                .location-container {
+                                    margin: 20px 0;
+                                    padding: 10px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                    background-color: #f9f9f9;
+                                }
+
+                                .location-container h3 {
+                                    margin-bottom: 10px;
+                                }
+
+                                .form-group {
+                                    margin: 10px 0;
+                                }
+
+                                .form-group label {
+                                    display: block;
+                                    margin-bottom: 5px;
+                                }
+
+                                .form-group select {
+                                    width: 100%;
+                                    padding: 8px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                }
+
+                                .get-location-btn {
+                                    padding: 10px 15px;
+                                    background-color: #4CAF50;
+                                    color: white;
+                                    border: none;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                    margin-bottom: 10px;
+                                }
+
+                                .get-location-btn:hover {
+                                    background-color: #45a049;
+                                }
+                            </style>
 
                             <div class="tab-content" id="tab-other">
                                 <h3>Nhập địa chỉ khác</h3>
@@ -236,41 +380,6 @@
                                 </div>
                             </div>
 
-                            <div class="tab-content" id="tab-table">
-                                <h3>Giao tới bàn</h3>
-                                <div class="form-group">
-                                    <label for="shop-table">Chọn số bàn:</label>
-                                    <select id="shop-table">
-                                        <option value="address1">Bàn số 1</option>
-                                        <option value="address2">Bàn số 2</option>
-                                        <option value="address3">Bàn số 3</option>
-                                        <option value="address4">Bàn số 4</option>
-                                        <option value="address5">Bàn số 5</option>
-                                        <option value="address6">Bàn số 6</option>
-                                        <option value="address7">Bàn số 7</option>
-                                        <option value="address8">Bàn số 8</option>
-                                        <option value="address9">Bàn số 9</option>
-                                        <option value="address10">Bàn số 10</option>
-                                    </select>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="shop-floor">Chọn tầng:</label>
-                                    <select id="shop-floor">
-                                        <option value="address1">Tầng 1</option>
-                                        <option value="address2">Tầng 2</option>
-                                        <option value="address3">Tầng 3</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="shop-address">Chọn quán:</label>
-                                    <select id="shop-address">
-                                        <option value="address1">Quán Coffee 1 - Khu Phố 6, Linh Trung, Thủ Đức, Thành phố Hồ Chí Minh</option>
-                                        <option value="address2">Quán Coffee 2 - Đường Lê Văn Việt, Quận 9,Thành phố Hồ Chí Minh </option>
-                                        <option value="address3">Quán Coffee 3 - Gò Vấp, Tân Bình, Thành phố Hồ Chí Minh</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                         <div id="difference-Add">
 
@@ -464,22 +573,65 @@
             floorSelect.appendChild(option);
         }
     }
-    // Lấy vị trí hiện tại
-    document.querySelector('.get-location-btn').addEventListener('click', () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                const { latitude, longitude } = position.coords;
-                document.getElementById('current-location').innerHTML = `
-                        <p>Vĩ độ: ${latitude}, Kinh độ: ${longitude}</p>
-                        <iframe
-                            width="100%"
-                            height="200"
-                            src="https://www.google.com/maps?q=${latitude},${longitude}&output=embed">
-                        </iframe>
-                    `;
+    let locationsData;
+
+    // Load dữ liệu từ file JSON
+    fetch('locations.json')
+        .then(response => response.json())
+        .then(data => {
+            locationsData = data;
+
+            const provinceSelect = document.getElementById('province');
+
+            // Đổ dữ liệu Tỉnh/Thành phố
+            for (const province in locationsData) {
+                const option = document.createElement('option');
+                option.value = province;
+                option.textContent = province;
+                provinceSelect.appendChild(option);
+            }
+        });
+
+    // Cập nhật danh sách Quận/Huyện khi thay đổi Tỉnh/Thành phố
+    document.getElementById('province').addEventListener('change', function () {
+        const districtSelect = document.getElementById('district');
+        const wardSelect = document.getElementById('ward');
+        const selectedProvince = this.value;
+
+        // Reset Quận/Huyện và Phường/Xã
+        districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+        wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
+
+        if (selectedProvince && locationsData[selectedProvince]) {
+            for (const district in locationsData[selectedProvince]) {
+                const option = document.createElement('option');
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            }
+        }
+    });
+
+    // Cập nhật danh sách Phường/Xã khi thay đổi Quận/Huyện
+    document.getElementById('district').addEventListener('change', function () {
+        const wardSelect = document.getElementById('ward');
+        const selectedProvince = document.getElementById('province').value;
+        const selectedDistrict = this.value;
+
+        // Reset Phường/Xã
+        wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
+
+        if (
+            selectedProvince &&
+            selectedDistrict &&
+            locationsData[selectedProvince][selectedDistrict]
+        ) {
+            locationsData[selectedProvince][selectedDistrict].forEach(ward => {
+                const option = document.createElement('option');
+                option.value = ward;
+                option.textContent = ward;
+                wardSelect.appendChild(option);
             });
-        } else {
-            alert('Trình duyệt của bạn không hỗ trợ định vị!');
         }
     });
 
@@ -554,6 +706,108 @@
             window.location.href = 'index.html';
         }
     });
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Loại bỏ trạng thái active khỏi tất cả các tab
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active'); // Thêm trạng thái active vào tab được chọn
+
+            // Hiển thị nội dung tương ứng với tab được chọn
+            const targetTab = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active'); // Ẩn tất cả nội dung
+                if (content.id === targetTab) {
+                    content.classList.add('active'); // Hiển thị nội dung tương ứng
+                }
+            });
+        });
+    });
+    document.querySelector('.get-location-btn').addEventListener('click', () => {
+        const currentLocation = document.getElementById('current-location');
+        const provinceSelect = document.getElementById('province');
+        const districtSelect = document.getElementById('district');
+        const wardSelect = document.getElementById('ward');
+        const streetInput = document.getElementById('street');
+
+        // Hiển thị thông báo vị trí hiện tại
+        currentLocation.innerHTML = `
+        <p>Vị trí hiện tại: Đường Kha Vạn Cân, Phường Linh Trung, Thủ Đức, Thành phố Hồ Chí Minh</p>
+    `;
+
+        // Tự động chọn Tỉnh/Thành phố
+        provinceSelect.value = 'Thành phố Hồ Chí Minh';
+        districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+        wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
+
+        // Đổ dữ liệu Quận/Huyện
+        if (locationsData['Thành phố Hồ Chí Minh']) {
+            for (const district in locationsData['Thành phố Hồ Chí Minh']) {
+                const option = document.createElement('option');
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            }
+            districtSelect.value = 'Thủ Đức';
+        }
+
+        // Đổ dữ liệu Phường/Xã cho Quận Thủ Đức
+        if (locationsData['Thành phố Hồ Chí Minh']['Thủ Đức']) {
+            locationsData['Thành phố Hồ Chí Minh']['Thủ Đức'].forEach(ward => {
+                const option = document.createElement('option');
+                option.value = ward;
+                option.textContent = ward;
+                wardSelect.appendChild(option);
+            });
+            wardSelect.value = 'Phường Linh Trung';
+        }
+
+        // Điền tên đường
+        streetInput.value = 'Kha Vạn Cân';
+    });
+
+    // Thêm sự kiện khi người dùng nhấn vào tab
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Loại bỏ trạng thái active khỏi tất cả các tab
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active'); // Thêm trạng thái active vào tab được chọn
+
+            // Ẩn toàn bộ nội dung
+            const targetTab = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab) {
+                    content.classList.add('active'); // Hiển thị nội dung tương ứng
+                }
+            });
+        });
+    });
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Loại bỏ trạng thái active khỏi tất cả các tab
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active'); // Thêm trạng thái active vào tab được chọn
+
+            // Ẩn toàn bộ nội dung
+            const targetTab = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+                if (content.id === targetTab) {
+                    content.classList.add('active'); // Hiển thị nội dung tương ứng
+                }
+            });
+
+            // Hiển thị hoặc ẩn phần "Lấy vị trí hiện tại"
+            const locationContainer = document.querySelector('.location-container');
+            if (targetTab === 'tab-current') {
+                locationContainer.style.display = 'block';
+            } else {
+                locationContainer.style.display = 'none';
+            }
+        });
+    });
+
+
 
 </script>
 </body>

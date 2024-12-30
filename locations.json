@@ -1,0 +1,28 @@
+{
+  "Thành phố Hồ Chí Minh": {
+    "Thủ Đức": ["Phường Linh Trung", "Phường Bình Chiểu", "Phường Hiệp Bình Phước", "Phường Tam Phú", "Phường Linh Tây"],
+    "Quận 1": ["Phường Bến Nghé", "Phường Bến Thành", "Phường Nguyễn Cư Trinh", "Phường Cô Giang", "Phường Tân Định"],
+    "Quận 2": ["Phường Thảo Điền", "Phường Bình An", "Phường Bình Trưng Đông", "Phường An Phú", "Phường Thủ Thiêm"],
+    "Quận 3": ["Phường Võ Thị Sáu", "Phường Nguyễn Thị Minh Khai", "Phường Phạm Ngọc Thạch", "Phường Tân Định"],
+    "Quận 4": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 6", "Phường 8", "Phường 9", "Phường 12"],
+    "Quận 5": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 6", "Phường 9"],
+    "Quận 6": ["Phường 1", "Phường 2", "Phường 5", "Phường 7", "Phường 9", "Phường 12"],
+    "Quận 7": ["Phường Tân Thuận Đông", "Phường Tân Thuận Tây", "Phường Phú Thuận", "Phường Tân Phong", "Phường Tân Quy"],
+    "Quận 8": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7", "Phường 8"],
+    "Quận 9": ["Phường Phú Hữu", "Phường Tăng Nhơn Phú A", "Phường Tăng Nhơn Phú B", "Phường Phước Long A", "Phường Phước Long B"],
+    "Quận 10": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7"],
+    "Quận 11": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6"],
+    "Quận 12": ["Phường Tân Chánh Hiệp", "Phường Hiệp Thành", "Phường Thới An", "Phường An Phú Đông", "Phường Đông Hưng Thuận"]
+  },
+  "Hà Nội": {
+    "Ba Đình": ["Phường Điện Biên", "Phường Quán Thánh", "Phường Cống Vị", "Phường Ngọc Hà", "Phường Kim Mã"],
+    "Đống Đa": ["Phường Khâm Thiên", "Phường Văn Chương", "Phường Trung Tự", "Phường Thịnh Quang", "Phường Láng Hạ"],
+    "Hoàn Kiếm": ["Phường Hàng Trống", "Phường Hàng Đào", "Phường Hàng Bồ", "Phường Hàng Mã", "Phường Tràng Tiền"],
+    "Hai Bà Trưng": ["Phường Bạch Mai", "Phường Đồng Nhân", "Phường Quỳnh Mai", "Phường Quỳnh Lôi", "Phường Bùi Thị Xuân"],
+    "Cầu Giấy": ["Phường Dịch Vọng", "Phường Dịch Vọng Hậu", "Phường Yên Hòa", "Phường Mai Dịch", "Phường Quan Hoa"],
+    "Thanh Xuân": ["Phường Nhân Chính", "Phường Khương Trung", "Phường Khương Đình", "Phường Thượng Đình", "Phường Hạ Đình"],
+    "Hoàng Mai": ["Phường Định Công", "Phường Đại Kim", "Phường Hoàng Liệt", "Phường Giáp Bát", "Phường Mai Động"],
+    "Long Biên": ["Phường Gia Thụy", "Phường Ngọc Lâm", "Phường Việt Hưng", "Phường Bồ Đề", "Phường Long Biên"],
+    "Hà Đông": ["Phường Yết Kiêu", "Phường Văn Quán", "Phường Nguyễn Trãi", "Phường Hà Cầu", "Phường La Khê"]
+  }
+}
