@@ -194,14 +194,14 @@
                             <div class="options">
                                 <h4>Chọn size (bắt buộc)</h4>
                                 <div class="size-options">
-                                    <button class="option-btn" data-price="0" onclick="updatePrice('size', 0)">Nhỏ + 0 đ</button>
+                                    <button class="option-btn active" data-price="0" onclick="updatePrice('size', 0)">Nhỏ + 0 đ</button>
                                     <button class="option-btn" data-price="10000" onclick="updatePrice('size', 10000)">Vừa + 10.000 đ</button>
                                     <button class="option-btn" data-price="16000" onclick="updatePrice('size', 16000)">Lớn + 16.000 đ</button>
                                 </div>
                 
                                 <h4>Topping</h4>
                                 <div class="topping-options">
-                                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Sốt Caramel + 10.000 đ</button>
+                                    <button class="option-btn " data-price="10000" onclick="updatePrice('topping', 10000)">Sốt Caramel + 10.000 đ</button>
                                     <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Shot Espresso + 10.000 đ</button>
                                     <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Trân châu trắng + 10.000 đ</button>
                                 </div>
@@ -210,7 +210,7 @@
                         <h5>Ghi chú</h5>
                         <textarea class="note-input" placeholder="Thêm lời dặn cho nhân viên pha chế..."></textarea>
                         <button class="add-btn" >Thêm vào giỏ hàng</button>
-                        <button class="order-btn">Đặt hàng ngay</button>
+                        <button class="order-btn" onclick="redirectToCart()">Đặt hàng ngay</button>
                     </div>
                             
                         </div>
@@ -455,6 +455,10 @@
 <!--banner-->
 </body>
 <script>
+
+function redirectToCart() {
+    window.location.href = "cart.html"; // Chuyển hướng đến trang cart.html
+}
         let basePrice = 29000; // Giá cơ bản
         let selectedSizePrice = 0;
         let selectedToppings = new Set();

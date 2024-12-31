@@ -92,7 +92,7 @@
                             <span>40,000 đ</span>
                         </div>
                         <div class="card-btn">
-                            <button><a href="#">Chi tiết</a></button>
+                            <button><a href="product_details.html">Chi tiết</a></button>
                             <button>Thêm vào giỏ</button>
                         </div>
                     </div>
@@ -319,10 +319,42 @@
             </div>
 
         </div>
+        <div id="cart-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: white; border: 2px solid #4CAF50; border-radius: 10px; text-align: center; z-index: 1000;">
+            <p>Đã thêm sản phẩm vào giỏ hàng!</p>
+            <button onclick="closePopup()" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Đóng</button>
+        </div>
+        <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
 
         <!-- footer page -->
         <div id="footer"></div>
         <script>
+
+            //thông báo thêm vào giỏ hàng
+             // Hàm mở popup
+    function showPopup() {
+        document.getElementById('cart-popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+
+        // Tự động đóng sau 3 giây
+        setTimeout(() => {
+            closePopup();
+        }, 3000);
+    }
+
+    // Hàm đóng popup
+    function closePopup() {
+        document.getElementById('cart-popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    // Thêm sự kiện click cho tất cả các nút "Thêm vào giỏ"
+    const addToCartButtons = document.querySelectorAll('.card-btn button:nth-child(2)');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            showPopup();
+        });
+    });
+            //
             fetch('footer.html')
               .then(response => response.text())
               .then(data => {

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/productdetails.css">
+    <link rel="stylesheet" href="css/lightslider.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Chi Tiết Sản Phẩm</title>
     <style>
         .product-container {
@@ -56,9 +63,28 @@
             color: #fff;
         }
 
-        .order-btn {
+        .add-btn {
+            margin-left: 20%;
             display: block;
-            width: 100%;
+            width: 70%;
+            padding: 10px;
+            background: #cacc6c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .add-btn:hover {
+            background: #e5f19e;
+        }
+
+        .order-btn {
+            margin-left: 20%;
+            display: block;
+            width: 70%;
             padding: 10px;
             background: #d35400;
             color: #fff;
@@ -72,39 +98,370 @@
         .order-btn:hover {
             background: #e67e22;
         }
+        .note-input {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s;
+        }
+
+        .note-input:focus {
+            border: 1px solid #d35400;
+            outline: none;
+        }
     </style>
 </head>
+
 <body>
-    <div class="product-container">
-        <!-- Hình ảnh sản phẩm -->
-        <img src="product-image.jpg" alt="Sản phẩm" class="product-image">
-
-        <!-- Chi tiết sản phẩm -->
-        <div class="product-details">
-            <h2>Cà Phê Sữa Đá</h2>
-            <p class="price" id="base-price">29.000 đ</p>
-
-            <div class="options">
-                <h4>Chọn size (bắt buộc)</h4>
-                <div class="size-options">
-                    <button class="option-btn" data-price="0" onclick="updatePrice('size', 0)">Nhỏ + 0 đ</button>
-                    <button class="option-btn" data-price="10000" onclick="updatePrice('size', 10000)">Vừa + 10.000 đ</button>
-                    <button class="option-btn" data-price="16000" onclick="updatePrice('size', 16000)">Lớn + 16.000 đ</button>
-                </div>
-
-                <h4>Topping</h4>
-                <div class="topping-options">
-                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Sốt Caramel + 10.000 đ</button>
-                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Shot Espresso + 10.000 đ</button>
-                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Trân châu trắng + 10.000 đ</button>
+    <div id="popup-message" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: #4CAF50; color: white; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000;">
+        Sản phẩm đã được thêm vào giỏ hàng!
+    </div>
+    <!-- Header page -->
+    <div id="header"></div>
+        <script>
+            fetch('header.html')
+              .then(response => response.text())
+              .then(data => {
+                document.getElementById('header').innerHTML = data;
+              });
+          </script>
+    <!--banner-->
+    
+    <!-- body page -->
+    <div class="body_page-menu">
+        <ul>
+            <li><a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Trang chủ</a>
+            </li>
+            <span><i class="fa-solid fa-chevron-right"></i></span>
+            <li class="second"><a href="">Đá xay</a></li>
+            <span><i class="fa-solid fa-chevron-right"></i></span>
+            <li><a href="">Matcha đá xay</a></li>
+        </ul>
+    </div>
+    <div class="product_details">
+        <div class="product_detail-area">
+            <div class="container">
+                <div class="row">
+                    <div class="product-div-left col-xl-6 col-lg-6">
+                        <div class="img_container">
+                            <img src="img/product/tra-sua-matcha.png" alt="">
+                        </div>
+                        <div class="hover_container">
+                            <div>
+                                <img src="img/product/tra-sua-matcha.png" alt="">
+                            </div>
+                            <div>
+                                <img src="img/product/tra-sua-matcha.png" alt="">
+                            </div>
+                            <div>
+                                <img src="img/product/tra-sua-matcha.png" alt="">
+                            </div>
+                            <div>
+                                <img src="img/product/tra-sua-matcha.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="product-div-right col-xl-6 col-lg-6">
+                        <span class="product_name mb_18"><main>Matcha đá xay</main></span>
+                        <p class="price" id="base-price">39.000 đ</p>
+                        <div class="product_rating mb_18">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star-half-stroke"></i></span>
+                            <span>(2 đánh giá)</span>
+                        </div>
+                        <span class="product_status mb_18">Tình trạng: <i>Còn hàng</i></span>
+                        <div class="size_quantity">
+                            <div class="quantity_wrapper">
+                                <div style="margin-right: 15px; text-align: center">Số lượng</div>
+                                <div class="wrapper">
+                                    <span class="button minus">-</span>
+                                    <input type="text" value="1" class="number">
+                                    <span class="button plus">+</span>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <h4>Chọn size (bắt buộc)</h4>
+                                <div class="size-options">
+                                    <button class="option-btn active" data-price="0" onclick="updatePrice('size', 0)">Nhỏ + 0 đ</button>
+                                    <button class="option-btn" data-price="10000" onclick="updatePrice('size', 10000)">Vừa + 10.000 đ</button>
+                                    <button class="option-btn" data-price="16000" onclick="updatePrice('size', 16000)">Lớn + 16.000 đ</button>
+                                </div>
+                
+                                <h4>Topping</h4>
+                                <div class="topping-options">
+                                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Kem muối + 10.000 đ</button>
+                                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Thạch rau câu + 10.000 đ</button>
+                                    <button class="option-btn" data-price="10000" onclick="updatePrice('topping', 10000)">Trân châu trắng + 10.000 đ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Ghi chú</h5>
+                        <textarea class="note-input" placeholder="Thêm lời dặn cho nhân viên pha chế..."></textarea>
+                        <button class="add-btn" >Thêm vào giỏ hàng</button>
+                        <button class="order-btn" onclick="redirectToCart()" >Đặt hàng ngay</button>
+                    </div>
+                            
+                        </div>
+                        <!-- Trigger/Open The Modal -->
+                        
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+       
 
-            <button class="order-btn">Đặt giao tận nơi</button>
+        <!--tab-->
+        <div class="tabs_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="product_details-tab">
+                            <!--tab items-->
+                            <div class="tabs">
+                                <ul class="nav-tabs">
+                                    <li class="active"><a href="#menu_1"><strong>Mô tả</strong></a></li>
+                                    <li><a href="#menu_2"><strong>Thông tin chi tiết</strong></a></li>
+                                    <li><a href="#menu_3"><strong>Đánh giá</strong></a></li>
+                                </ul>
+                            </div>
+                            <!--tab contents-->
+                            <div class="tab-content">
+                                <div id="menu_1" class="tab-content-item">
+                                    <p>&emsp;&emsp;&emsp;Matcha đá xay là sự kết hợp hoàn hảo giữa vị thanh mát của bột trà xanh nguyên chất, 
+                                        sữa tươi béo ngậy và đá xay nhuyễn mịn, mang lại cảm giác mát lạnh, thư giãn và bổ dưỡng.</p>
+                                    <p>&emsp;&emsp;&emsp;</p>
+                                
+                                </div>
+                                <div id="menu_2" class="tab-content-item">
+                                    <div class="table-wrapper">
+                                        <table class="table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>Thành phần:</b></td>
+                                                    <td>Bột matcha nguyên chất, sữa tươi, đường, kem béo, đá xay.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Loại matcha:</b></td>
+                                                    <td>Ceremonial Grade Matcha</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Calo:</b></td>
+                                                    <td>Chứa khoảng 200-300 calo, tùy thuộc vào lượng đường và kem béo sử dụng.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Lưu ý:</b></td>
+                                                    <td>Bột matcha chứa caffeine, nên hạn chế sử dụng vào buổi tối nếu bạn nhạy cảm với caffeine. Lượng đường trong sữa đặc rất cao, việc tiêu thụ quá nhiều đường có thể gây hại cho sức khỏe, đặc biệt là đối với người mắc bệnh tiểu đường hoặc các vấn đề về răng miệng.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Khuyến nghị:</b></td>
+                                                    <td>Có thể điều chỉnh lượng đường và kem béo theo sở thích để phù hợp với chế độ ăn uống.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="menu_3" class="tab-content-item">
+                                    <div class="product_review_form">
+                                        <ol class="comment_list">
+                                            <li class="comment">
+                                                <div class="comment_container">
+                                                    <div class="review_top">
+                                                        <strong class="review_author">Phạm Thị Minh Phương</strong>
+                                                    </div>
+                                                    <div class="review_mid">
+                                                        <div class="star_rating">
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star-half-stroke"></i></span>
+                                                        </div>
+                                                        <div class="description">Hương vị matcha thơm ngon, béo ngậy, uống rất thích. Giao hàng nhanh!</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="comment">
+                                                <div class="comment_container">
+                                                    <div class="review_top">
+                                                        <strong class="review_author">Ngô Minh Khánh</strong>
+                                                    </div>
+                                                    <div class="review_mid">
+                                                        <div class="star_rating">
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                            <span><i class="fa-solid fa-star"></i></span>
+                                                        </div>
+                                                        <div class="description">Thức uống mát lạnh, matcha nguyên chất rất thơm. Mình sẽ mua thêm lần sau!</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                        <form action="#">
+                                            <h2>Thêm nhận xét</h2>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <label for="review_comment">Nhận xét của bạn </label>
+                                                    <textarea name="comment" id="review_comment"></textarea>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <label for="author">Tên </label>
+                                                    <input id="author" type="text">
+
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <label for="email">Email </label>
+                                                    <input id="email" type="text">
+                                                </div>
+                                            </div>
+                                            <button type="submit">Gửi</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--related_product-->
+        <div class="related_products">
+            <div class="title" style="margin-bottom: 30px">
+                <h2 style="text-align: center">Sản phẩm liên quan</h2>
+            </div>
+            <div class="box container">
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="body_page-trending-product-list-card">
+                                <div class="card-image">
+                                    <a href="productdetails.html"><img src="img/details/coffee/espresso.jpg" alt=""></a>
+                                </div>
+                                <div class="card-title-price">
+                                    <a href=""><p>Espresso</p></a>
+                                    <span>35.000 đ</span>
+                                </div>
+                                <div class="card-btn">
+                                    <button><a href="productdetails.html">Chi tiết</a></button>
+                                    <button>Thêm vào giỏ</button>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="item-b">
+                        <div class="body_page-trending-product-list-card">
+                            <div class="card-image">
+                                <a href="productdetails.html"><img src="img/details/coffee/ca-phe-latte-da.jpg" alt=""></a>
+                            </div>
+                            <div class="card-title-price">
+                                <a href="productdetails.html"><p>Latte đá</p></a>
+                                <span>30.000 đ</span>
+                            </div>
+                            <div class="card-btn">
+                                <button><a href="productdetails.html">Chi tiết</a></button>
+                                <button>Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-c">
+                        <div class="body_page-trending-product-list-card">
+                            <div class="card-image">
+                                <a href="productdetails.html"><img src="img/details/coffee/ca-phe-vanilla-latte-600x450.jpg" alt=""></a>
+                            </div>
+                            <div class="card-title-price">
+                                <a href="productdetails.html"><p>Vanilla latte</p></a>
+                                <span>45.000 đ</span>
+                            </div>
+                            <div class="card-btn">
+                                <button><a href="productdetails.html">Chi tiết</a></button>
+                                <button>Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-d">
+                        <div class="body_page-trending-product-list-card">
+                            <div class="card-image">
+                                <a href="productdetails.html"><img src="img/details/coffee/ca-phe-caramel-latte-600x398.jpg" alt=""></a>
+                            </div>
+                            <div class="card-title-price">
+                                <a href="productdetails.html"><p>Caramel latte</p></a>
+                                <span>40.000 đ</span>
+                            </div>
+                            <div class="card-btn">
+                                <button><a href="productdetails.html">Chi tiết</a></button>
+                                <button>Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-e">
+                        <div class="body_page-trending-product-list-card">
+                            <div class="card-image">
+                                <a href="productdetails.html"><img src="img/details/coffee/ca-phe-matcha-latte-600x400.jpg" alt=""></a>
+                            </div>
+                            <div class="card-title-price">
+                                <a href="productdetails.html"><p>Matcha Latte</p></a>
+                                <span>45.000 đ</span>
+                            </div>
+                            <div class="card-btn">
+                                <button><a href="productdetails.html">Chi tiết</a></button>
+                                <button>Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-f">
+                        <div class="body_page-trending-product-list-card">
+                            <div class="card-image">
+                                <a href="productdetails.html"><img src="img/details/coffee/ca-phe-Americano-1.jpg" alt=""></a>
+                            </div>
+                            <div class="card-title-price">
+                                <a href="productdetails.html"><p> Americano</p></a>
+                                <span>2.285.000 đ</span>
+                            </div>
+                            <div class="card-btn">
+                                <button><a href="productdetails.html">Chi tiết</a></button>
+                                <button>Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+   
+    <!--footer page-->
+  
+   <div id="footer"></div>
+   <scrip>
+       fetch('footer.html')
+         .then(response => response.text())
+         .then(data => {
+           document.getElementById('footer').innerHTML = data;
+         });
+     </script>
 
-    <script>
+     
+<!--banner-->
+
+
+
+</body>
+<script>
+    function redirectToCart() {
+    window.location.href = "cart.html"; // Chuyển hướng đến trang cart.html
+}
+    
         let basePrice = 29000; // Giá cơ bản
         let selectedSizePrice = 0;
         let selectedToppings = new Set();
@@ -138,6 +495,65 @@
             const totalPrice = basePrice + selectedSizePrice + toppingsTotal;
             document.getElementById('base-price').textContent = totalPrice.toLocaleString('vi-VN') + ' đ';
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const quantityInput = document.querySelector(".number");
+        const minusBtn = document.querySelector(".minus");
+        const plusBtn = document.querySelector(".plus");
+
+        function updateTotalPrice() {
+            const quantity = parseInt(quantityInput.value) || 1;
+            const toppingsTotal = Array.from(selectedToppings).reduce((sum, topping) => {
+                return sum + parseInt(topping.getAttribute("data-price"));
+            }, 0);
+
+            const totalPrice = (basePrice + selectedSizePrice + toppingsTotal) * quantity;
+            document.getElementById("base-price").textContent = totalPrice.toLocaleString("vi-VN") + " đ";
+        }
+
+        // Sự kiện thay đổi số lượng
+        quantityInput.addEventListener("input", updateTotalPrice);
+
+        // Sự kiện cho nút trừ
+        minusBtn.addEventListener("click", function () {
+            let currentValue = parseInt(quantityInput.value) || 1;
+            if (currentValue > 1) {
+                quantityInput.value = currentValue ;
+                updateTotalPrice();
+            }
+        });
+
+        // Sự kiện cho nút cộng
+        plusBtn.addEventListener("click", function () {
+            let currentValue = parseInt(quantityInput.value) || 1;
+            quantityInput.value = currentValue ;
+            updateTotalPrice();
+        });
+    });
+
+    document.querySelector('.add-btn').addEventListener('click', function () {
+        // Hiển thị popup
+        const popup = document.getElementById('popup-message');
+        popup.style.display = 'block';
+
+        // Thêm hiệu ứng mờ dần
+        setTimeout(() => {
+            popup.style.opacity = '1';
+            popup.style.transition = 'opacity 0.5s';
+        }, 10);
+
+        // Ẩn popup sau 3 giây
+        setTimeout(() => {
+            popup.style.opacity = '0';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 500); // Đợi hiệu ứng mờ dần hoàn tất
+        }, 2000);
+    });
     </script>
-</body>
+<script src="js/jquery-3.6.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/productdetail.js"></script>
+<script src="js/lightslider.js"></script>
+
 </html>
